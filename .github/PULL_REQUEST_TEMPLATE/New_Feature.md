@@ -6,12 +6,12 @@ Cleary and concisely describe the changes made.
 
 
 
-# Output Screenshots 
+# Output Screenshots: 
 Post the output screenshots, if an UI is affected or added due to this feature.
 
 
 
-# Areas affected and ensured
+# Areas affected and ensured:
 List out the areas affected by your code changes.
 
 
