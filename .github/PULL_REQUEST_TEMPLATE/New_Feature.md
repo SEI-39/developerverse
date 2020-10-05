@@ -1,5 +1,8 @@
-# Feature Description
-Cleary and concisely describe the feature.
+# Description of changes made:
+Cleary and concisely describe the changes made.
+
+
+# Related Issues:
 
 
 
@@ -12,20 +15,5 @@ Post the output screenshots, if an UI is affected or added due to this feature.
 List out the areas affected by your code changes.
 
 
-# Does your new code introduce new warnings or binding errors?
 
-
-
-# Did you test this feature on all browsers and Devices?
-Yes, ensured with all the following browsers:
-
-- [ ] Chrome
-- [ ] Firefox
-- [ ] Internet Explorer
-
-Yes, ensured with all the following devices:
-- [ ] Mobile
-- [ ] Tablet
-- [ ] Desktop
-
-# Suggest an idea for this project
+# Questions or Comments:
