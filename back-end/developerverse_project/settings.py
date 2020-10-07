@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'developerverse'
 ]
 
+# User Substitution
+AUTH_USER_MODEL = 'developerverse.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
