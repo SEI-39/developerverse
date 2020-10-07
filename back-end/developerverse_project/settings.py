@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'developerverse'
+    'developerverse',
+    'corsheaders',
 ]
 
 # User Substitution
@@ -57,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'developerverse_project.urls'
@@ -135,3 +138,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+# Whitelisted CORS Domains
+# https://github.com/adamchainz/django-cors-headers#configuration
+CORS_ALLOWED_ORIGINS = [
+    "https://developerverse.netlify.app/",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000"
+]
