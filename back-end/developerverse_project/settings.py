@@ -13,8 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
-# env vari's
+import dj_database_url
 
+# Import enviornmental variables
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -30,7 +31,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -85,14 +86,17 @@ WSGI_APPLICATION = 'developerverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'developerverse',
-        'USER': 'developerverse_user',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
         'PASSWORD': os.getenv("DB_PWD"),
         'HOST': os.getenv("DB_HOST"),
         'PORT': os.getenv("DB_PORT")
     }
 }
 
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
