@@ -1,6 +1,6 @@
 import React from "react";
-import Profile from "./Components/Profile.js";
-import Home from "./Components/Home.js";
+import Profile from "./Pages/Profile.js";
+import Home from "./Pages/Home.js";
 import Navbar from "./Components/Navbar.js";
 import Sidebar from "./Components/Sidebar.js";
 import { HashRouter, Route, Link } from "react-router-dom";
