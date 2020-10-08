@@ -145,7 +145,7 @@ STATIC_URL = '/static/'
 # Whitelisted CORS Domains
 # https://github.com/adamchainz/django-cors-headers#configuration
 CORS_ALLOWED_ORIGINS = [
-    "https://developerverse.netlify.app/",
+    "https://developerverse.netlify.app",
     "http://localhost:8080",
     "http://127.0.0.1:9000"
 ]
