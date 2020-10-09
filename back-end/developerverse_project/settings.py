@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'developerverse'
+    'Users'
 ]
 
 # User Substitution
-AUTH_USER_MODEL = 'developerverse.User'
+AUTH_USER_MODEL = 'Users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
