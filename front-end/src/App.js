@@ -3,7 +3,7 @@ import Profile from "./Pages/Profile.js";
 import Home from "./Pages/Home.js";
 import Navbar from "./Components/Navbar.js";
 import Sidebar from "./Components/Sidebar.js";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 
 export default function App() {
   return (
