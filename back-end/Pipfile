@@ -11,6 +11,10 @@ django = "*"
 psycopg2-binary = "*"
 python-dotenv = "*"
 djangorestframework = "*"
+gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.8"
