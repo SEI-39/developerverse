@@ -1,16 +1,18 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
+import { useHistory } from "react-router-dom";
 
 function Login() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const { setUser } = useContext(UserContext);
+  const history = useHistory();
 
   const handleSubmit = async () => {
     //we still need to check if the user passwords matches the db, then continue with login
     const user = await handleLogin();
     setUser(user);
-    window.history.back();
+    history.push(`/profile/${user.id}`);
   };
 
   const handleLogin = async () => {
