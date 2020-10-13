@@ -1,31 +1,41 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
+  const history = useHistory();
 
   const logout = async () => {
     setUser(null);
+    history.push("/");
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        width: "50vw",
+        left: "0",
+      }}
+    >
+      <h1>DEVELOPERVERSE</h1>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>home</h4>
+        <h4>HOME</h4>
       </Link>
       {user ? (
         <>
           <Link to={`/profile/${user.id}`} style={{ textDecoration: "none" }}>
-            <h4>profile</h4>
+            <h4>PROFILE</h4>
           </Link>
           <button onClick={logout}>
-            <h4>Logout</h4>
+            <h4>LOGOUT</h4>
           </button>
         </>
       ) : (
         <Link to="/login" style={{ textDecoration: "none" }}>
-          <h4>Login</h4>
+          <h4>LOGIN</h4>
         </Link>
       )}
     </div>
