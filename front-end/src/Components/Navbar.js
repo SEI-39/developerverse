@@ -28,8 +28,8 @@ function Navbar() {
       </Link>
       {user ? (
         <>
-          <Link to={`/profile/${user.id}`} style={{ textDecoration: "none" }}>
-            <h4>PROFILE</h4>
+          <Link to={`/account/${user.id}`} style={{ textDecoration: "none" }}>
+            <h4>ACCOUNT</h4>
           </Link>
           <button onClick={logout}>
             <h4>LOGOUT</h4>

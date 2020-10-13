@@ -2,24 +2,18 @@ import React, { useContext } from "react";
 import ProjectList from "../Components/ProjectList";
 import { UserContext } from "../UserContext";
 
-function Profile() {
+function Account() {
   const { user } = useContext(UserContext);
 
   //the projects will be passed props of what users profile we are on
 
   return (
     <div>
-      <h1>Profile Page</h1>
-      {user ? (
-        <div>
-          <pre>USER: {JSON.stringify(user)}</pre>
-          <ProjectList />
-        </div>
-      ) : (
-        <h2>This profile doesnt exist</h2>
-      )}
+      <h1>My Account</h1>
+      <pre>USER: {JSON.stringify(user)}</pre>
+      <ProjectList />
     </div>
   );
 }
 
-export default Profile;
+export default Account;

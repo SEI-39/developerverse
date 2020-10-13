@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import Profile from "./Pages/Profile.js";
+import Account from "./Pages/Account.js";
 import Home from "./Pages/Home.js";
 import Navbar from "./Components/Navbar.js";
 import Sidebar from "./Components/Sidebar.js";
@@ -23,11 +23,20 @@ export default function App() {
           <main>
             <>
               <Route exact path="/" render={() => <Home />} />
-              <Route
-                exact
-                path="/profile/:id"
-                render={({ match }) => <Profile match={match} />}
-              />
+              {user ? (
+                <Route
+                  exact
+                  path="/account/:id"
+                  render={({ match }) => <Account match={match} />}
+                />
+              ) : (
+                <Route
+                  exact
+                  path="/account/:id"
+                  render={({ match }) => <Login match={match} />}
+                />
+              )}
+
               <Route
                 exact
                 path="/login"

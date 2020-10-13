@@ -12,7 +12,7 @@ function Login() {
     //we still need to check if the user passwords matches the db, then continue with login
     const user = await handleLogin();
     setUser(user);
-    history.push(`/profile/${user.id}`);
+    history.push(`/account/${user.id}`);
   };
 
   const handleLogin = async () => {
@@ -25,6 +25,7 @@ function Login() {
 
   return (
     <div className="form__container">
+      <h1>LOGIN</h1>
       <div className="email">
         <input
           placeholder="Email"
