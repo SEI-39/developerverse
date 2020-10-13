@@ -8,5 +8,10 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ('id', 'user_id', 'name', 'repo_url', 'project_url', 'desc')
+        fields = ['id', 'user', 'name', 'repo_url', 'project_url', 'desc']
 
+class WebsiteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Website
+        fields = ['id', 'user', 'web_name', 'web_url']
