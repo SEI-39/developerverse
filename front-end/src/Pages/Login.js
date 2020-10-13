@@ -4,7 +4,7 @@ import { UserContext } from "../UserContext";
 function Login() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = async () => {
     //we still need to check if the user passwords matches the db, then continue with login
