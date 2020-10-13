@@ -10,8 +10,14 @@ function Profile() {
   return (
     <div>
       <h1>Profile Page</h1>
-      <pre>USER: {JSON.stringify(user)}</pre>
-      <ProjectList />
+      {user ? (
+        <div>
+          <pre>USER: {JSON.stringify(user)}</pre>
+          <ProjectList />
+        </div>
+      ) : (
+        <h2>This profile doesnt exist</h2>
+      )}
     </div>
   );
 }
