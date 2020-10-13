@@ -24,3 +24,17 @@ class Website(models.Model):
 
     def __str__(self):
         return self.web_name
+
+class Comment(models.Model):
+    body = models.TextField()
+    timestamp_created = models.DateTimeField(auto_now_add=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE,
+                                related_name='comments')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                               related_name='comments')
+
+    def __str__(self):
+        if(len(self.body) < 50):
+            return self.body
+        else:
+            return self.body[:50] + "..."
