@@ -23,7 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
             'email': user.email
         }
 
-    def validate(self, data):
+    def validate_login(self, data):
         email = data.get('email')
         password = data.get('password')
 

@@ -17,5 +17,9 @@ class Login(APIView):
     def get(self, request):
         body = json.loads(request.body)
         serializer = UserSerializer(data={**body})
-        res = serializer.validate(serializer.initial_data)
+        res = serializer.validate_login(serializer.initial_data)
         return Response(res)
+
+class Root(APIView):
+    def get(self, request):
+        return Response({'success': True, 'user': request.user})
