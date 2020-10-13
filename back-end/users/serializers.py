@@ -1,5 +1,8 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import get_user_model, authenticate
+from django.utils.translation import ugettext_lazy as _
+
 
 User = get_user_model()
 
@@ -13,4 +16,29 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         user.save()
-        return user
+        token = Token.objects.create(user=user)
+        return {
+            'token': token.key,
+            'user_id': user.pk,
+            'email': user.email
+        }
+
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
+
+        if email and password:
+            user = authenticate(request=self.context.get('request'),
+                                email=email, password=password)
+            if not user:
+                msg = _('Unable to log in with provided credentials.')
+                raise serializers.ValidationError(msg, code='authorization')
+            token = Token.objects.get(user=user)
+            return {
+                'token': token.key,
+                'user_id': user.pk,
+                'email': user.email
+            }
+        else:
+            msg = _("Must include 'email' and 'password'.")
+            raise serializers.ValidationError(msg, code='authorization')
