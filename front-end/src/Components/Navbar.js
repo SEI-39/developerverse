@@ -20,9 +20,11 @@ function Navbar() {
         left: "0",
       }}
     >
-      <h1>DEVELOPERVERSE</h1>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>HOME</h4>
+        <h4>DEVELOPERVERSE</h4>
+      </Link>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <h4>ABOUT</h4>
       </Link>
       {user ? (
         <>
