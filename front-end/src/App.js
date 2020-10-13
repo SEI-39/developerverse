@@ -6,6 +6,7 @@ import Sidebar from "./Components/Sidebar.js";
 import { HashRouter, Route } from "react-router-dom";
 import { UserContext } from "./UserContext.js";
 import Login from "./Pages/Login";
+import Profile from "./Pages/Profile";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -36,11 +37,15 @@ export default function App() {
                   render={({ match }) => <Login match={match} />}
                 />
               )}
-
               <Route
                 exact
                 path="/login"
                 render={({ match }) => <Login match={match} />}
+              />
+              <Route
+                exact
+                path="/profile/:id"
+                render={({ match }) => <Profile match={match} />}
               />
             </>
           </main>
