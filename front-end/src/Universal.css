@@ -60,21 +60,21 @@ font-weight: 100;
 @import url("https://use.typekit.net/urd1cnd.css");
 
 h1 {
-  font-family: t26-carbon, monospace;
+  font-family: "t26-carbon", monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 42px;
 }
 
 h2 {
-  font-family: t26-carbon, monospace;
+  font-family: "t26-carbon", monospace;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
 }
 
 h3 {
-  font-family: t26-carbon, monospace;
+  font-family: "t26-carbon", monospace;
   font-style: normal;
   font-weight: 100;
   font-size: 24px;
@@ -88,7 +88,7 @@ h3 {
   border-radius: 7px;
   padding: 10px;
   font-size: 24px;
-  font-family: t26-carbon, monospace;
+  font-family: "t26-carbon", monospace;
   font-style: normal;
   font-weight: 700;
 }
