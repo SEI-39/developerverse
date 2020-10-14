@@ -9,7 +9,7 @@ function Login() {
   const { setUser } = useContext(UserContext);
   const history = useHistory();
 
-  const signIn = async () => {
+  const login = async () => {
     let res = await axios
       .post(`/users/login`, {
         email: emailInput,
@@ -23,9 +23,9 @@ function Login() {
       if (res.data.email === emailInput) {
         setUser(res.data);
         history.push(`/myprofile/${res.data.user_id}`);
-      } else {
-        alert("password or username not found, please try again");
       }
+    } else {
+      alert("password and/or username not found, please try again");
     }
   };
 
@@ -46,7 +46,7 @@ function Login() {
         />
       </div>
       <div>
-        <button onClick={signIn} type="submit">
+        <button onClick={login} type="submit">
           Login
         </button>
       </div>

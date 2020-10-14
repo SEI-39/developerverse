@@ -12,14 +12,22 @@ function SignUpForm() {
 
   const createUser = async () => {
     if (confirmPasswordInput === passwordInput) {
-      let res = await axios.post(`/users/create`, {
-        email: emailInput,
-        password: passwordInput,
-      });
-      setUser(res.data);
-      history.push(`/myprofile/${res.data.user_id}`);
+      let res = await axios
+        .post(`/users/create`, {
+          email: emailInput,
+          password: passwordInput,
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      if (res !== undefined) {
+        setUser(res.data);
+        history.push(`/myprofile/${res.data.user_id}`);
+      } else {
+        alert(`failed to create an account using the email: ${emailInput}`);
+      }
     } else {
-      alert("password don't match, please try again");
+      alert("password and/or username not found, please try again");
     }
   };
 
