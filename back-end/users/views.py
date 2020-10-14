@@ -22,10 +22,10 @@ class Create(APIView):
 
 class Login(APIView):
     permission_classes = [AllowAny]
-    def get(self, request):
+    queryset = User.objects.none()
+
+    def post(self, request):
         body = json.loads(request.body)
         serializer = UserSerializer(data={**body})
         res = serializer.validate_login(serializer.initial_data)
         return Response(res)
-
-    queryset = User.objects.none()
