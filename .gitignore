@@ -129,3 +129,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Added .vscode to allow for easier work with Django REST Framework
+.vscode/
