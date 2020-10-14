@@ -34,7 +34,7 @@ export default function App() {
             />
             <Route
               exact
-              path="/signup/"
+              path="/signup"
               render={({ match }) => <SignUp match={match} />}
             />
           </>
