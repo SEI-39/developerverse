@@ -147,13 +147,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 
-
 # Whitelisted CORS Domains
 # https://github.com/adamchainz/django-cors-headers#configuration
 CORS_ALLOWED_ORIGINS = [
     "https://developerverse.netlify.app",
     "http://localhost:8080",
-    "http://127.0.0.1:9000"
+    "http://127.0.0.1:9000",
+    "http://localhost:3000"
 ]
 
 # Disable the standard view and only return the JSON object that is
