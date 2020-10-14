@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework import permissions
 from .models import Project, Website
-from .serializers import ProjectSerializer, WebsiteSerializer
+from .serializers import ProjectSerializer
 
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
