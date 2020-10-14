@@ -36,7 +36,7 @@ class Create(APIView):
 
 class Login(APIView):
     permission_classes = [AllowAny]
-    def get(self, request):
+    def post(self, request):
         body = json.loads(request.body)
         serializer = UserSerializer(data={**body})
         res = serializer.validate_login(serializer.initial_data)
