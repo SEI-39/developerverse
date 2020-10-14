@@ -14,9 +14,13 @@ function Login() {
       email: emailInput,
       password: passwordInput,
     });
-    if (res.data.email === emailInput) {
-      setUser(res.data);
-      history.push(`/myprofile/${res.data.user_id}`);
+    if (res.data.email) {
+      if (res.data.email === emailInput) {
+        setUser(res.data);
+        history.push(`/myprofile/${res.data.user_id}`);
+      } else {
+        alert("password or username not found, please try again");
+      }
     } else {
       alert("password or username not found, please try again");
     }
