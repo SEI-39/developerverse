@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { useHistory } from "react-router-dom";
+import axios from "../axios";
 
 function Login() {
   const [emailInput, setEmailInput] = useState("");
@@ -8,19 +9,17 @@ function Login() {
   const { setUser } = useContext(UserContext);
   const history = useHistory();
 
-  const handleSubmit = async () => {
-    //we still need to check if the user passwords matches the db, then continue with login
-    const user = await handleLogin();
-    setUser(user);
-    history.push(`/myprofile/${user.id}`);
-  };
-
-  const handleLogin = async () => {
-    return {
+  const signIn = async () => {
+    let res = await axios.post(`/users/login`, {
       email: emailInput,
       password: passwordInput,
-      id: "example",
-    };
+    });
+    if (res.data.email === emailInput) {
+      setUser(res.data);
+      history.push(`/myprofile/${res.data.user_id}`);
+    } else {
+      alert("password or username not found, please try again");
+    }
   };
 
   return (
@@ -39,7 +38,7 @@ function Login() {
         />
       </div>
       <div>
-        <button onClick={handleSubmit} type="submit">
+        <button onClick={signIn} type="submit">
           Login
         </button>
       </div>

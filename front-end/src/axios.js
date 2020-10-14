@@ -5,7 +5,7 @@ let instance = null;
 
 if (environment === "development") {
   instance = axios.create({
-    baseURL: "http://localhost:5432/",
+    baseURL: "http://127.0.0.1:8000/",
   });
 } else {
   instance = axios.create({
