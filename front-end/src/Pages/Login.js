@@ -10,19 +10,22 @@ function Login() {
   const history = useHistory();
 
   const signIn = async () => {
-    let res = await axios.post(`/users/login`, {
-      email: emailInput,
-      password: passwordInput,
-    });
-    if (res.data.email) {
+    let res = await axios
+      .post(`/users/login`, {
+        email: emailInput,
+        password: passwordInput,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    if (res !== undefined) {
       if (res.data.email === emailInput) {
         setUser(res.data);
         history.push(`/myprofile/${res.data.user_id}`);
       } else {
         alert("password or username not found, please try again");
       }
-    } else {
-      alert("password or username not found, please try again");
     }
   };
 
@@ -38,6 +41,7 @@ function Login() {
       <div className="password">
         <input
           placeholder="Password"
+          type="password"
           onChange={(e) => setPasswordInput(e.target.value)}
         />
       </div>
