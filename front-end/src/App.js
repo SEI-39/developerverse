@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from "react";
-import Account from "./Pages/Account.js";
+import MyProfile from "./Pages/MyProfile.js";
 import Home from "./Pages/Home.js";
 import Navbar from "./Components/Navbar.js";
 import Sidebar from "./Components/Sidebar.js";
-import { HashRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { UserContext } from "./UserContext.js";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
@@ -14,43 +14,41 @@ export default function App() {
   const providerValue = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
-    <HashRouter basename="/">
-      <UserContext.Provider value={providerValue}>
+    <UserContext.Provider value={providerValue}>
+      <div>
         <div>
-          <div>
-            <Navbar />
-            <Sidebar />
-          </div>
-          <main>
-            <>
-              <Route exact path="/" render={() => <Home />} />
-              {user ? (
-                <Route
-                  exact
-                  path="/account/:id"
-                  render={({ match }) => <Account match={match} />}
-                />
-              ) : (
-                <Route
-                  exact
-                  path="/account/:id"
-                  render={({ match }) => <Login match={match} />}
-                />
-              )}
+          <Navbar />
+          <Sidebar />
+        </div>
+        <main>
+          <>
+            <Route exact path="/" render={() => <Home />} />
+            {user ? (
               <Route
                 exact
-                path="/login"
+                path="/myprofile/:id"
+                render={({ match }) => <MyProfile match={match} />}
+              />
+            ) : (
+              <Route
+                exact
+                path="/myprofile/:id"
                 render={({ match }) => <Login match={match} />}
               />
-              <Route
-                exact
-                path="/profile/:id"
-                render={({ match }) => <Profile match={match} />}
-              />
-            </>
-          </main>
-        </div>
-      </UserContext.Provider>
-    </HashRouter>
+            )}
+            <Route
+              exact
+              path="/login"
+              render={({ match }) => <Login match={match} />}
+            />
+            <Route
+              exact
+              path="/profile/:id"
+              render={({ match }) => <Profile match={match} />}
+            />
+          </>
+        </main>
+      </div>
+    </UserContext.Provider>
   );
 }

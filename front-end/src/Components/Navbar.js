@@ -28,7 +28,7 @@ function Navbar() {
       </Link>
       {user ? (
         <>
-          <Link to={`/account/${user.id}`} style={{ textDecoration: "none" }}>
+          <Link to={`/myprofile/${user.id}`} style={{ textDecoration: "none" }}>
             <h4>ACCOUNT</h4>
           </Link>
           <button onClick={logout}>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ProjectList from "../Components/ProjectList";
 import { UserContext } from "../UserContext";
 
-function Account() {
+function MyProfile() {
   const { user } = useContext(UserContext);
 
   //the projects will be passed props of what users profile we are on
@@ -16,4 +16,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default MyProfile;

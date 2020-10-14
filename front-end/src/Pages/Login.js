@@ -12,7 +12,7 @@ function Login() {
     //we still need to check if the user passwords matches the db, then continue with login
     const user = await handleLogin();
     setUser(user);
-    history.push(`/account/${user.id}`);
+    history.push(`/myprofile/${user.id}`);
   };
 
   const handleLogin = async () => {
