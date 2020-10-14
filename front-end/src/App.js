@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from "react";
-import MyProfile from "./Pages/MyProfile.js";
 import Home from "./Pages/Home.js";
 import Navbar from "./Components/Navbar.js";
 import Sidebar from "./Components/Sidebar.js";
@@ -7,6 +6,7 @@ import { Route } from "react-router-dom";
 import { UserContext } from "./UserContext.js";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
+import SecureRoutes from "./Components/SecureRoutes";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -23,19 +23,7 @@ export default function App() {
         <main>
           <>
             <Route exact path="/" render={() => <Home />} />
-            {user ? (
-              <Route
-                exact
-                path="/myprofile/:id"
-                render={({ match }) => <MyProfile match={match} />}
-              />
-            ) : (
-              <Route
-                exact
-                path="/myprofile/:id"
-                render={({ match }) => <Login match={match} />}
-              />
-            )}
+            <SecureRoutes />
             <Route
               exact
               path="/login"
