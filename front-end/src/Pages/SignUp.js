@@ -31,9 +31,9 @@ function SignUpForm(props) {
       <h1>Sign Up</h1>
       
         <div>
-          <label htmlFor="exampleInputEmail1">Full Name</label>
+          <label> Full Name</label>
           <input type="text" id="text" placeholder="Enter Name" />
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label> Email address</label>
           <input
             type="email"
             id="email"

@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
-
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
-
   const logout = async () => {
     setUser(null);
     history.push("/");
   };
-
   return (
     <div
       style={{
@@ -36,12 +33,16 @@ function Navbar() {
           </button>
         </>
       ) : (
-        <Link to="/login" style={{ textDecoration: "none" }}>
-          <h4>LOGIN</h4>
-        </Link>
+        <>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <h4>LOGIN</h4>
+          </Link>
+          <Link to="/signup" style={{ textDecoration: "none" }}>
+            <h4>SIGNUP</h4>
+          </Link>
+        </>
       )}
     </div>
   );
 }
-
 export default Navbar;

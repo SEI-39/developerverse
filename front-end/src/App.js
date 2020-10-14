@@ -7,12 +7,10 @@ import { UserContext } from "./UserContext.js";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import SecureRoutes from "./Components/SecureRoutes";
-
+import SignUp from "./Pages/SignUp.js";
 export default function App() {
   const [user, setUser] = useState(null);
-
   const providerValue = useMemo(() => ({ user, setUser }), [user, setUser]);
-
   return (
     <UserContext.Provider value={providerValue}>
       <div>
@@ -33,6 +31,11 @@ export default function App() {
               exact
               path="/profile/:id"
               render={({ match }) => <Profile match={match} />}
+            />
+            <Route
+              exact
+              path="/signup/"
+              render={({ match }) => <SignUp match={match} />}
             />
           </>
         </main>
