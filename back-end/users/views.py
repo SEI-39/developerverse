@@ -10,10 +10,17 @@ User = get_user_model()
 
 class Root(APIView):
 
-    queryset = User.objects.none()
+    def get_queryset(self):
+        qs = super(Root, self).get_queryset()
+        return self.filter_queryset(qs, request.user)
 
-    def get(self, request):
-        return Response({'success': True, 'user': request.user})
+    def filter_queryset(self, qs, user):
+        return User.objects.get(user=)
+
+    def post(self, request):
+        print(request.user)
+        self.queryset = User.objects.get(user=request.user)
+        return Response({'success': True})
 
 class Create(APIView):
     # This opens the view up, so anyone can make an account
