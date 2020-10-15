@@ -126,6 +126,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
+
+GUARDIAN_RAISE_403 = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -147,15 +154,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-
 # Whitelisted CORS Domains
 # https://github.com/adamchainz/django-cors-headers#configuration
 CORS_ALLOWED_ORIGINS = [
     "https://developerverse.netlify.app",
     "http://localhost:8080",
     "http://127.0.0.1:9000",
-    "http://localhost:3000"
-]
+    "http://localhost:3000"]
 
 # Disable the standard view and only return the JSON object that is
 # requested, See the following for more details:
@@ -174,9 +179,3 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-# Django Guardian Default options
-# https://django-guardian.readthedocs.io/en/stable/configuration.html
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend', # this is default
-    'guardian.backends.ObjectPermissionBackend',
-)
