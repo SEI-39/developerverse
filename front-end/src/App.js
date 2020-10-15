@@ -11,6 +11,7 @@ import NotFound from "./Components/NotFound.js";
 import MyProfile from "./Pages/MyProfile";
 import Explore from "./Pages/Explore";
 import "./Styles/Universal.css";
+import "./Styles/App.css";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -21,20 +22,24 @@ export default function App() {
       <div>
         <Navbar />
         <Sidebar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/profile/:id" component={Profile} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/explore" component={Explore} />
+        <div className="uBlack app__container">
+          <div className="body__container">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/profile/:id" component={Profile} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/explore" component={Explore} />
 
-          {user ? (
-            <Route exact path="/myprofile/:id" component={MyProfile} />
-          ) : (
-            <Route exact path="/myprofile/:id" component={Login} />
-          )}
-          <Route component={NotFound} />
-        </Switch>
+              {user ? (
+                <Route exact path="/myprofile/:id" component={MyProfile} />
+              ) : (
+                <Route exact path="/myprofile/:id" component={Login} />
+              )}
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </div>
       </div>
     </UserContext.Provider>
   );

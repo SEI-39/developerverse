@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <div>
+      <div className="uGray">
         <h1>welcome to developerverse</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -1,9 +1,8 @@
 import React from "react";
+import "../Styles/Sidebar.css";
 
 function Sidebar() {
-  return (
-    <div style={{ position: "absolute", right: "0", top: "50vh" }}>sidebar</div>
-  );
+  return <div className="sidebar__container uLightGray">sidebar</div>;
 }
 
 export default Sidebar;
