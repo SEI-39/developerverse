@@ -1,0 +1,89 @@
+.main-container {
+    background-color:black;
+    padding: 30px;
+    height: 100%;
+}
+body {
+    background-color: black;
+    font-family: t26-carbon, monospace;
+    font-style: normal;   
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.body-text {
+    color: #b0b0b0;
+}
+.header {
+    background-color: #201a26;
+    
+}
+.nav-bar {
+    background-color: #201a26;
+
+}
+h1 {
+    font-family: "t26-carbon", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+  }
+
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.picture1 {
+    background-image: url('developerVerse.jpg');
+    height: 150px;
+    width: 800px;
+    background-size: cover;
+    margin: 15px;
+}
+.picture2 {
+    background-image: url('coder.jpg');
+    height: 150px;
+    width: 800px;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    margin: 15px;
+}
+.picture3 {
+    background-image: url('coder2.jpg');
+    height: 150px;
+    width: 800px;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    margin: 15px;
+}
+.contentBox1-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    height: 150px;
+    
+}
+.contentBox2-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px;
+    align-items: center;
+    
+}
+.contentBox3-container {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    align-items: center;
+    
+}
+.uGray.uBox {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
