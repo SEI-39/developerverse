@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100px;
+  height: 10vh;
   left: 0;
 }
 
@@ -19,7 +19,7 @@
 .buttonsGrid {
   width: 50vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .buttonFlex {
@@ -30,6 +30,6 @@
 }
 
 .siteTitle {
-  font-size: 69px;
+  font-size: 40px;
   transform: translate(10px, 0px);
 }
