@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { useHistory } from "react-router-dom";
+import axios from "../axios";
 
 function Login() {
   const [emailInput, setEmailInput] = useState("");
@@ -8,19 +9,24 @@ function Login() {
   const { setUser } = useContext(UserContext);
   const history = useHistory();
 
-  const handleSubmit = async () => {
-    //we still need to check if the user passwords matches the db, then continue with login
-    const user = await handleLogin();
-    setUser(user);
-    history.push(`/myprofile/${user.id}`);
-  };
+  const login = async () => {
+    let res = await axios
+      .post(`/users/login`, {
+        email: emailInput,
+        password: passwordInput,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-  const handleLogin = async () => {
-    return {
-      email: emailInput,
-      password: passwordInput,
-      id: "example",
-    };
+    if (res !== undefined) {
+      if (res.data.email === emailInput) {
+        setUser(res.data);
+        history.push(`/myprofile/${res.data.user_id}`);
+      }
+    } else {
+      alert("password and/or username not found, please try again");
+    }
   };
 
   return (
@@ -35,11 +41,12 @@ function Login() {
       <div className="password">
         <input
           placeholder="Password"
+          type="password"
           onChange={(e) => setPasswordInput(e.target.value)}
         />
       </div>
       <div>
-        <button onClick={handleSubmit} type="submit">
+        <button onClick={login} type="submit">
           Login
         </button>
       </div>

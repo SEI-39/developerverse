@@ -9,7 +9,6 @@ from rest_framework.response import Response
 import json
 
 User = get_user_model()
-
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
