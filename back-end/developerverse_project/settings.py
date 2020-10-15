@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'developerverse',
     'corsheaders',
+    'guardian'
 ]
 
 # User Substitution
@@ -173,3 +174,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
