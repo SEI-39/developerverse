@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
-import "./Navbar.css";
-import "./../Universal.css";
+import "../Styles/Navbar.css";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -21,63 +20,96 @@ function Navbar() {
   }
 
   return (
-    <div className="uPurple navbar" style={{}}>
+    <div className="uPurple navbar">
       <div className="titleFlex">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
           <h1 className="uYellowText siteTitle uClear">
-            &lt;Developer-Verse&#92;&gt;
+            &lt;Developer-Verse&#47;&gt;
           </h1>
         </Link>
       </div>
       <div className="buttonsGrid">
-        <Link to="/" className="buttonFlex">
+        <Link
+          to="/"
+          className="buttonFlex"
+          style={{ textDecoration: "none", color: "white" }}
+        >
           <h2
             className="uButton uClear"
             onMouseOver={buttonHover}
             onMouseLeave={buttonHover}
           >
-            ABOUT
+            &lt;ABOUT&#47;&gt;
+          </h2>
+        </Link>
+        <Link
+          to="/explore"
+          className="buttonFlex"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <h2
+            className="uButton uClear"
+            onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}
+          >
+            &lt;EXPLORE&#47;&gt;
           </h2>
         </Link>
         {user ? (
           <>
-            <Link to={`/myprofile/${user.id}`} className="buttonFlex">
+            <Link
+              to={`/myprofile/${user.id}`}
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               <h2
                 className="uButton uClear"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                ACCOUNT
+                &lt;ACCOUNT&#47;&gt;
               </h2>
             </Link>
-            <button onClick={logout}>
+            <div
+              onClick={logout}
+              className="buttonFlex"
+              style={{ color: "white" }}
+            >
               <h2
                 className="uButton uClear"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                LOGOUT
+                &lt;LOG_OUT&#47;&gt;
               </h2>
-            </button>
+            </div>
           </>
         ) : (
           <>
-            <Link to="/login" className="buttonFlex">
+            <Link
+              to="/login"
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               <h2
                 className="uButton uClear"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                LOGIN
+                &lt;LOG_IN&#47;&gt;
               </h2>
             </Link>
-            <Link to="/signup" className="buttonFlex">
+            <Link
+              to="/signup"
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               <h2
                 className="uButton uClear"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                SIGNUP
+                &lt;SIGN_UP&#47;&gt;
               </h2>
             </Link>
           </>
