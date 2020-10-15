@@ -9,15 +9,15 @@
 }
 
 .titleFlex {
-  width: 42vw;
+  width: 50vw;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
 .buttonsGrid {
-  width: 58vw;
+  width: 50vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -31,4 +31,5 @@
 
 .siteTitle {
   font-size: 69px;
+  transform: translate(10px, 0px);
 }
