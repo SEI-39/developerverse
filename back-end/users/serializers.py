@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model, authenticate
+from guardian.shortcuts import assign_perm
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -16,6 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         user.save()
+        assign_perm('developerverse.add_project', user)
         token = Token.objects.create(user=user)
         return {
             'token': token.key,

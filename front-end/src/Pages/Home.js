@@ -3,11 +3,10 @@ import "../css/Home.css";
 
 function Home() {
   return (
-    <div className="main-container" >
-      
-      <div>
-        <h1 className='home-title'>welcome to developerverse</h1>
-        <p className='body-text'>
+    <div>
+      <div className="uGray">
+        <h1>welcome to developerverse</h1>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

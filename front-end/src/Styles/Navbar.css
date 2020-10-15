@@ -2,10 +2,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  position: sticky;
+  z-index: 2;
+  display: flex;
   width: 100vw;
-  height: 100px;
+  height: 10vh;
   left: 0;
+  top: 0;
 }
 
 .titleFlex {
@@ -19,7 +22,7 @@
 .buttonsGrid {
   width: 50vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .buttonFlex {
@@ -30,6 +33,6 @@
 }
 
 .siteTitle {
-  font-size: 69px;
+  font-size: 40px;
   transform: translate(10px, 0px);
 }
