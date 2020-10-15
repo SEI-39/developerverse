@@ -13,7 +13,11 @@ function Navbar() {
   };
 
   function buttonHover(e) {
-    e.target.className = "uButton uClear uHover";
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uClear";
+    } else {
+      e.target.className = "uButton uClear uHover";
+    }
   }
 
   return (
@@ -24,19 +28,31 @@ function Navbar() {
         </h1>
       </Link>
       <Link to="/">
-        <h2 className="uButton uClear" onMouseOver={buttonHover}>
+        <h2
+          className="uButton uClear"
+          onMouseOver={buttonHover}
+          onMouseLeave={buttonHover}
+        >
           ABOUT
         </h2>
       </Link>
       {user ? (
         <>
           <Link to={`/myprofile/${user.id}`}>
-            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+            <h2
+              className="uButton uClear"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
               ACCOUNT
             </h2>
           </Link>
           <button onClick={logout}>
-            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+            <h2
+              className="uButton uClear"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
               LOGOUT
             </h2>
           </button>
@@ -44,12 +60,20 @@ function Navbar() {
       ) : (
         <>
           <Link to="/login">
-            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+            <h2
+              className="uButton uClear"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
               LOGIN
             </h2>
           </Link>
           <Link to="/signup">
-            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+            <h2
+              className="uButton uClear"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
               SIGNUP
             </h2>
           </Link>
