@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { useHistory } from "react-router-dom";
 import axios from "../axios";
+import "./../Styles/Login.css";
 
 function Login() {
   const [emailInput, setEmailInput] = useState("");
@@ -29,25 +30,56 @@ function Login() {
     }
   };
 
+  function buttonHover(e) {
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uGray uWhiteText loginButton loginFlex";
+    } else {
+      e.target.className = "uButton uGray uHover loginButton loginFlex";
+    }
+  }
+
+  function buttonClick(e) {
+    e.target.className = "uButton uGray uClick loginButton loginFlex";
+  }
+
   return (
     <div className="form__container">
-      <h1>LOGIN</h1>
-      <div className="email">
-        <input
-          placeholder="Email"
-          onChange={(e) => setEmailInput(e.target.value)}
-        />
+      <h3 className="uLightGrayText" style={{ paddingBottom: "20px" }}>
+        if (isDeveloper === true &amp;&amp; isLoggedIn === false) <br />
+      </h3>
+      <div className="uBox leftFlex">
+        <div className="loginFlex">
+          <h3 className="uYellowText">let Email = input("</h3>
+          <input
+            className="uClear uLightGrayText loginInput"
+            onChange={(e) => setEmailInput(e.target.value)}
+          />
+          <h3 className="uYellowText">"),</h3>
+        </div>
+        <div className="loginFlex">
+          <h3 className="uYellowText">Password = input("</h3>
+          <input
+            className="uClear uLightGrayText loginInput"
+            type="password"
+            onChange={(e) => setPasswordInput(e.target.value)}
+          />
+          <h3 className="uYellowText">");</h3>
+        </div>
       </div>
-      <div className="password">
-        <input
-          placeholder="Password"
-          type="password"
-          onChange={(e) => setPasswordInput(e.target.value)}
-        />
-      </div>
+      <h3 className="uLightGrayText" style={{ paddingTop: "20px" }}>
+        const user = &#123; email: Email.hashInput(), password:
+        Password.hashInput() &#125; <br />
+      </h3>
       <div>
-        <button onClick={login} type="submit">
-          Login
+        <button
+          className="uButton uGray uLightGrayText loginButton loginFlex"
+          onMouseOver={buttonHover}
+          onMouseLeave={buttonHover}
+          onClick={login}
+          onMouseDown={buttonClick}
+          type="submit"
+        >
+          Login(user);
         </button>
       </div>
     </div>
