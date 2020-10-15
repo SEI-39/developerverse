@@ -9,39 +9,49 @@ function Navbar() {
     history.push("/");
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        width: "50vw",
-        left: "0",
-      }}
-    >
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>DEVELOPERVERSE</h4>
-      </Link>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>ABOUT</h4>
-      </Link>
-      {user ? (
-        <>
-          <Link to={`/myprofile/${user.id}`} style={{ textDecoration: "none" }}>
-            <h4>ACCOUNT</h4>
-          </Link>
-          <button onClick={logout}>
-            <h4>LOGOUT</h4>
-          </button>
-        </>
-      ) : (
-        <>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <h4>LOGIN</h4>
-          </Link>
-          <Link to="/signup" style={{ textDecoration: "none" }}>
-            <h4>SIGNUP</h4>
-          </Link>
-        </>
-      )}
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <h4>DEVELOPERVERSE</h4>
+        </Link>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "50vw",
+          right: "0",
+        }}
+      >
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <h4>ABOUT</h4>
+        </Link>
+        <Link to="/explore" style={{ textDecoration: "none" }}>
+          <h4>EXPLORE</h4>
+        </Link>
+        {user ? (
+          <>
+            <Link
+              to={`/myprofile/${user.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <h4>ACCOUNT</h4>
+            </Link>
+            <button onClick={logout}>
+              <h4>LOGOUT</h4>
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <h4>LOGIN</h4>
+            </Link>
+            <Link to="/signup" style={{ textDecoration: "none" }}>
+              <h4>SIGNUP</h4>
+            </Link>
+          </>
+        )}
+      </div>
     </div>
   );
 }

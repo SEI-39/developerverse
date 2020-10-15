@@ -9,6 +9,7 @@ import Profile from "./Pages/Profile";
 import SignUp from "./Pages/SignUp.js";
 import NotFound from "./Components/NotFound.js";
 import MyProfile from "./Pages/MyProfile";
+import Explore from "./Pages/Explore";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,8 @@ export default function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/explore" component={Explore} />
+
           {user ? (
             <Route exact path="/myprofile/:id" component={MyProfile} />
           ) : (
