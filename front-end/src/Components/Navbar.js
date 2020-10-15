@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import "../Styles/Navbar.css";
+
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
@@ -8,46 +10,107 @@ function Navbar() {
     setUser(null);
     history.push("/");
   };
+
+  function buttonHover(e) {
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uClear";
+    } else {
+      e.target.className = "uButton uClear uHover";
+    }
+  }
+
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <h4>DEVELOPERVERSE</h4>
+    <div className="uPurple navbar">
+      <div className="titleFlex">
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          <h1 className="uYellowText siteTitle uClear">
+            &lt;Developer-Verse&#47;&gt;
+          </h1>
         </Link>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "50vw",
-          right: "0",
-        }}
-      >
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <h4>ABOUT</h4>
+      <div className="buttonsGrid">
+        <Link
+          to="/"
+          className="buttonFlex"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <h2
+            className="uButton uClear"
+            onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}
+          >
+            &lt;ABOUT&#47;&gt;
+          </h2>
         </Link>
-        <Link to="/explore" style={{ textDecoration: "none" }}>
-          <h4>EXPLORE</h4>
+        <Link
+          to="/explore"
+          className="buttonFlex"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <h2
+            className="uButton uClear"
+            onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}
+          >
+            &lt;EXPLORE&#47;&gt;
+          </h2>
         </Link>
         {user ? (
           <>
             <Link
               to={`/myprofile/${user.id}`}
-              style={{ textDecoration: "none" }}
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
             >
-              <h4>ACCOUNT</h4>
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                &lt;ACCOUNT&#47;&gt;
+              </h2>
             </Link>
-            <button onClick={logout}>
-              <h4>LOGOUT</h4>
-            </button>
+            <div
+              onClick={logout}
+              className="buttonFlex"
+              style={{ color: "white" }}
+            >
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                &lt;LOG_OUT&#47;&gt;
+              </h2>
+            </div>
           </>
         ) : (
           <>
-            <Link to="/login" style={{ textDecoration: "none" }}>
-              <h4>LOGIN</h4>
+            <Link
+              to="/login"
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                &lt;LOG_IN&#47;&gt;
+              </h2>
             </Link>
-            <Link to="/signup" style={{ textDecoration: "none" }}>
-              <h4>SIGNUP</h4>
+            <Link
+              to="/signup"
+              className="buttonFlex"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                &lt;SIGN_UP&#47;&gt;
+              </h2>
             </Link>
           </>
         )}

@@ -10,6 +10,7 @@ import SignUp from "./Pages/SignUp.js";
 import NotFound from "./Components/NotFound.js";
 import MyProfile from "./Pages/MyProfile";
 import Explore from "./Pages/Explore";
+import "./Styles/Universal.css";
 
 export default function App() {
   const [user, setUser] = useState(null);
