@@ -39,6 +39,18 @@ Use these EXCLUSIVELY to apply color to elements.*/
   background: #f2ce18;
 }
 
+.uYellowText {
+  color: #f2ce18;
+}
+
+.uWhiteText {
+  color: #d9d9d9;
+}
+
+.uLightGrayText {
+  color: #b0b0b0;
+}
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* THE FONT: */
 
@@ -78,6 +90,11 @@ h3 {
   font-style: normal;
   font-weight: 100;
   font-size: 24px;
+}
+
+a {
+  color: #b0b0b0;
+  text-decoration: none;
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
