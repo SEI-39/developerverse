@@ -23,7 +23,7 @@ export default function App() {
         <Navbar />
         <Sidebar />
         <div className="uBlack app__container">
-          <div className="body__container uGray">
+          <div className="body__container">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
