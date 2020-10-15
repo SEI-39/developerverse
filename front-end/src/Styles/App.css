@@ -1,0 +1,14 @@
+.app__container {
+  width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body__container {
+  width: 90%;
+  margin: 20px;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.918);
+  height: 150vh;
+}
