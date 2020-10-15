@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users',
     'developerverse',
     'corsheaders',
+    'guardian',
 ]
 
 # User Substitution
@@ -124,6 +125,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
+
+GUARDIAN_RAISE_403 = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

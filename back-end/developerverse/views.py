@@ -2,6 +2,13 @@ from rest_framework import generics
 from rest_framework import permissions
 from .models import Project, Website
 from .serializers import ProjectSerializer
+from django.contrib.auth import get_user_model
+from guardian.shortcuts import assign_perm
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.views.generic.list import ListView
+
+User = get_user_model()
 
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
@@ -13,7 +20,20 @@ class ProjectList(generics.ListCreateAPIView):
 class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    # Only Users that are authenticated and have the the requisite permissions 
+    # Only Users that are authenticated and have the the requisite permissions
     # defined in Django's standrard model permissions will be able to edit the
-    # entry 
+    # entry
     permission_classes = (permissions.DjangoModelPermissions, )
+
+class ProjectCreate(generics.GenericAPIView):
+    serializer_class = ProjectSerializer
+
+    def get_queryset(self):
+        qs = Project.objects.filter(user_id=self.request.user)
+        return qs
+
+    def post(self, request):
+            body = json.loads(request.body)
+            serializer = UserSerializer(data={**body})
+            res = serializer.validate_login(serializer.initial_data)
+            return Response(res)
