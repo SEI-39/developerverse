@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import "./Navbar.css";
+import "./../Universal.css";
+
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
@@ -8,37 +11,47 @@ function Navbar() {
     setUser(null);
     history.push("/");
   };
+
+  function buttonHover(e) {
+    e.target.className = "uButton uClear uHover";
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        width: "50vw",
-        left: "0",
-      }}
-    >
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>DEVELOPERVERSE</h4>
+    <div className="uPurple navFlex" style={{}}>
+      <Link to="/">
+        <h1 className="uYellowText siteTitle uClear">
+          &lt;Developer-Verse&#92;&gt;
+        </h1>
       </Link>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>ABOUT</h4>
+      <Link to="/">
+        <h2 className="uButton uClear" onMouseOver={buttonHover}>
+          ABOUT
+        </h2>
       </Link>
       {user ? (
         <>
-          <Link to={`/myprofile/${user.id}`} style={{ textDecoration: "none" }}>
-            <h4>ACCOUNT</h4>
+          <Link to={`/myprofile/${user.id}`}>
+            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+              ACCOUNT
+            </h2>
           </Link>
           <button onClick={logout}>
-            <h4>LOGOUT</h4>
+            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+              LOGOUT
+            </h2>
           </button>
         </>
       ) : (
         <>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <h4>LOGIN</h4>
+          <Link to="/login">
+            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+              LOGIN
+            </h2>
           </Link>
-          <Link to="/signup" style={{ textDecoration: "none" }}>
-            <h4>SIGNUP</h4>
+          <Link to="/signup">
+            <h2 className="uButton uClear" onMouseOver={buttonHover}>
+              SIGNUP
+            </h2>
           </Link>
         </>
       )}
