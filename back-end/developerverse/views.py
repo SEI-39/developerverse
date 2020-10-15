@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from guardian.shortcuts import assign_perm
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.views.generic.list import ListView
+import json
 
 User = get_user_model()
 
@@ -33,7 +33,8 @@ class ProjectCreate(generics.GenericAPIView):
         return qs
 
     def post(self, request):
-            body = json.loads(request.body)
-            serializer = UserSerializer(data={**body})
-            res = serializer.validate_login(serializer.initial_data)
+        body = json.loads(request.body)
+        serializer = ProjectSerializer(data={**body})
+        if serializer.is_valid(raise_exception=True):
+            res = serializer.create(serializer.validated_data)
             return Response(res)

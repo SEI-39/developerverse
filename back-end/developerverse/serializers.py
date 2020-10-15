@@ -10,9 +10,11 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = Project
         fields = ['id', 'user', 'name', 'repo_url', 'project_url', 'desc']
 
-    def get_queryset(self):
-        user = self.context['request'].user
-        queryset = super(ProjectCreate, self).get_queryset()
-        if not request or not queryset:
-                return None
-        return queryset.filter(user=user)
+    def create(self, validated_data):
+        project = Project.objects.create(**validated_data)
+        project.save()
+        return {
+            "name": project.name,
+            "project_id": project.id,
+            "user": project.user.id
+        }
