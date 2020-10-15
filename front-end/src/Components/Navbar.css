@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+  left: 0;
+}
+
+.titleFlex {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.buttonsGrid {
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.buttonFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.siteTitle {
+  font-size: 69px;
+  transform: translate(10px, 0px);
+}

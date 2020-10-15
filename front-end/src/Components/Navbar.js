@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import "./Navbar.css";
+import "./../Universal.css";
+
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
   const history = useHistory();
@@ -8,40 +11,78 @@ function Navbar() {
     setUser(null);
     history.push("/");
   };
+
+  function buttonHover(e) {
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uClear";
+    } else {
+      e.target.className = "uButton uClear uHover";
+    }
+  }
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        width: "50vw",
-        left: "0",
-      }}
-    >
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>DEVELOPERVERSE</h4>
-      </Link>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h4>ABOUT</h4>
-      </Link>
-      {user ? (
-        <>
-          <Link to={`/myprofile/${user.id}`} style={{ textDecoration: "none" }}>
-            <h4>ACCOUNT</h4>
-          </Link>
-          <button onClick={logout}>
-            <h4>LOGOUT</h4>
-          </button>
-        </>
-      ) : (
-        <>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <h4>LOGIN</h4>
-          </Link>
-          <Link to="/signup" style={{ textDecoration: "none" }}>
-            <h4>SIGNUP</h4>
-          </Link>
-        </>
-      )}
+    <div className="uPurple navbar" style={{}}>
+      <div className="titleFlex">
+        <Link to="/">
+          <h1 className="uYellowText siteTitle uClear">
+            &lt;Developer-Verse&#92;&gt;
+          </h1>
+        </Link>
+      </div>
+      <div className="buttonsGrid">
+        <Link to="/" className="buttonFlex">
+          <h2
+            className="uButton uClear"
+            onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}
+          >
+            ABOUT
+          </h2>
+        </Link>
+        {user ? (
+          <>
+            <Link to={`/myprofile/${user.id}`} className="buttonFlex">
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                ACCOUNT
+              </h2>
+            </Link>
+            <button onClick={logout}>
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                LOGOUT
+              </h2>
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="buttonFlex">
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                LOGIN
+              </h2>
+            </Link>
+            <Link to="/signup" className="buttonFlex">
+              <h2
+                className="uButton uClear"
+                onMouseOver={buttonHover}
+                onMouseLeave={buttonHover}
+              >
+                SIGNUP
+              </h2>
+            </Link>
+          </>
+        )}
+      </div>
     </div>
   );
 }
