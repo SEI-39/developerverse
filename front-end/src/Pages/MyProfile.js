@@ -42,7 +42,7 @@ function MyProfile() {
       <h1>My Account</h1>
       <pre>USER: {JSON.stringify(user)}</pre>
       <ProjectList />
-      <button onClick={() => setForm(true)}>create project</button>
+      <button onClick={() => setForm(true)}>create a new project</button>
       {form && (
         <div>
           <h1>here is a form</h1>
