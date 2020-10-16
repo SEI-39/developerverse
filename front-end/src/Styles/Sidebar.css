@@ -1,3 +1,8 @@
+.buttonItem {
+  height: 30px;
+  padding-right: 5%;
+}
+
 .dashGrid {
   width: 100%;
   display: grid;
@@ -21,9 +26,8 @@
   padding-top: 20px;
 }
 
-.buttonItem {
-  height: 30px;
-  padding-right: 5%;
+.notAllowed {
+  cursor: not-allowed;
 }
 
 .sidebar__container {
