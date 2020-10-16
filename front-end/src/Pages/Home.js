@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/Home.css";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home() {
   function buttonHover(e) {

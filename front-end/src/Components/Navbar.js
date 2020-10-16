@@ -20,7 +20,10 @@ function Navbar() {
   }
 
   return (
-    <div className="uLineBox uPurple navbar" style={{ borderRadius: "0px" }}>
+    <div
+      className="uPurple navbar"
+      style={{ borderBottom: "1px solid #756975" }}
+    >
       <div className="titleFlex">
         <Link to="/" style={{ textDecoration: "none", color: "white" }}>
           <h1 className="uYellowText siteTitle uClear">
