@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Home.css";
-
+import { Link, useHistory } from "react-router-dom";
 
 function Home() {
   
@@ -30,8 +30,10 @@ function Home() {
           <div className= 'textbox-right'>
             <p className='textchild uGray uBox'>Create an account, and start posting your personal projects!</p>
             <div className="spacer">
-            <button className='uButton uGray uLightGrayText' onMouseOver={buttonHover}
-            onMouseLeave={buttonHover}>About</button>
+            
+            <Link
+              to="/signup" className='uButton uGray uLightGrayText' onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}> Sign Up </Link>
           </div>
           </div>
        
@@ -43,10 +45,10 @@ function Home() {
           </div>
           
           <div className= 'textbox-left'>
-            <p className='textchild uGray uBox'>Meet other developers and share your portfolios</p>
+            <p className='textchild uGray uBox'>Meet and connect with other developers and share your portfolios</p>
             <div className="spacer2">
-              <button className='uButton uGray uLightGrayText ' onMouseOver={buttonHover}
-            onMouseLeave={buttonHover}>Explore</button>
+              <Link to='/explore' className='uButton uGray uLightGrayText ' onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}>Explore </Link>
           </div>
           </div>
        
@@ -57,10 +59,10 @@ function Home() {
           </div>
           
           <div className= 'textbox-right'>
-            <p className='textchild uGray uBox'>Sign up and register now!</p>
+            <p className='textchild uGray uBox'>Login to update your projects</p>
             <div className="spacer">
-              <button className='uButton uGray uLightGrayText ' onMouseOver={buttonHover}
-            onMouseLeave={buttonHover}>Sign Up</button>
+              <Link to='/login' className='uButton uGray uLightGrayText ' onMouseOver={buttonHover}
+            onMouseLeave={buttonHover}>Login</Link>
           </div>
           </div>
        
