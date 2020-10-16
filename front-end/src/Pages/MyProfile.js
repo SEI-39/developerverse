@@ -19,7 +19,7 @@ function MyProfile() {
 
   useEffect(() => {
     async function fetchProjects() {
-      const res = await axios.get(`/projects/`, {
+      const res = await axios.get(`/users/profile`, {
         headers: headers,
       });
       setProjects(res.data);
