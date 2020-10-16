@@ -51,6 +51,19 @@ function MyProfile() {
 
     setForm(false);
   };
+
+  function buttonHover(e) {
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uGray uWhiteText loginButton loginFlex";
+    } else {
+      e.target.className = "uButton uGray uHover loginButton loginFlex";
+    }
+  }
+
+  function buttonClick(e) {
+    e.target.className = "uButton uGray uClick loginButton loginFlex";
+  }
+
   return (
     <div className="uLightGrayText">
       <div>
@@ -74,15 +87,26 @@ function MyProfile() {
           </h3>{" "}
         </div>
       </div>
-      <h2>Projects:</h2>
+      <h2 style={{ marginTop: "20px", marginBottom: "20px" }}>Projects:</h2>
       {projects && (
-        <div className="projects__container">
+        <div className="profileProjects">
           {projects.map((project) => (
             <ProjectDisplay project={project} />
           ))}
         </div>
       )}
-      <button onClick={() => setForm(true)}>create a new project</button>
+      <div>
+        <h2
+          onMouseOver={buttonHover}
+          onMouseLeave={buttonHover}
+          onMouseDown={buttonClick}
+          onClick={() => setForm(true)}
+          type="submit"
+          className="uButton uGray uLightGrayText loginButton loginFlex"
+        >
+          Create_New_Project();
+        </h2>
+      </div>
       {form && (
         <div>
           <h1>here is a form</h1>
@@ -102,7 +126,18 @@ function MyProfile() {
             placeholder="Project description"
             onChange={(e) => setDesc(e.target.value)}
           />
-          <button onClick={() => createProject()}>create</button>
+          <div>
+            <h2
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+              onMouseDown={buttonClick}
+              onClick={createProject}
+              type="submit"
+              className="uButton uGray uLightGrayText loginButton loginFlex"
+            >
+              Submit_Project();
+            </h2>
+          </div>{" "}
         </div>
       )}
     </div>

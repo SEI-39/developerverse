@@ -7,7 +7,7 @@ function Sidebar({ user }) {
       e.target.className = "uButtonSmall uClear uLightGrayText sideButton";
     } else {
       e.target.className =
-        "uButtonSmall uClear uLightGrayText uHoverSmall sideButton";
+        "uButtonSmall uClear uLightGrayText sideButton uHoverSmall notAllowed ";
     }
   }
 
@@ -30,19 +30,19 @@ function Sidebar({ user }) {
           <div className="sideList uLightGrayText">
             <div className="listItem">
               <h2 className="li">$</h2>
-              <h3 className="uYellowText li">One Fish</h3>
+              <h3 className="uYellowText li">Example_OneFish</h3>
             </div>
             <div className="listItem">
               <h2 className="li">$</h2>
-              <h3 className="uYellowText li">Two Fish</h3>
+              <h3 className="uYellowText li">Example_TwoFish</h3>
             </div>
             <div className="listItem">
               <h2 className="li">$</h2>
-              <h3 className="uYellowText li">Red Fish</h3>
+              <h3 className="uYellowText li">Example_RedFish</h3>
             </div>
             <div className="listItem">
               <h2 className="li">$</h2>
-              <h3 className="uYellowText li">Blue Fish</h3>
+              <h3 className="uYellowText li">Example_BlueFish</h3>
             </div>
           </div>
           <div className="dashGrid">
@@ -56,7 +56,7 @@ function Sidebar({ user }) {
               onMouseOver={buttonHover}
               onMouseLeave={buttonHover}
             >
-              &lt;Log_out&#47;&gt;
+              &lt;Example_1&#47;&gt;
             </h2>
           </div>
           <div className="listItem buttonItem">
@@ -65,7 +65,7 @@ function Sidebar({ user }) {
               onMouseOver={buttonHover}
               onMouseLeave={buttonHover}
             >
-              &lt;Log_out&#47;&gt;
+              &lt;Example_2&#47;&gt;
             </h2>
           </div>
           <div className="listItem buttonItem">
@@ -74,7 +74,7 @@ function Sidebar({ user }) {
               onMouseOver={buttonHover}
               onMouseLeave={buttonHover}
             >
-              &lt;Log_out&#47;&gt;
+              &lt;Example_3&#47;&gt;
             </h2>
           </div>
         </div>
