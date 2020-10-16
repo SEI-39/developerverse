@@ -10,7 +10,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ['id', 'user', 'name', 'repo_url', 'project_url', 'desc']
-
+    
     def create(self, validated_data):
         project = Project.objects.create(**validated_data)
         project.save()
