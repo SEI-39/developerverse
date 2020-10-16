@@ -25,14 +25,15 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['body', 'project', 'author']
+        fields = ['body', 'project', 'user']
 
     def create(self, validated_data):
         comment = Comment.objects.create(**validated_data)
         comment.save()
         return {
+            "id": comment.id,
             "body": comment.body,
             "project": comment.project.id,
-            "author": comment.author.id,
+            "user": comment.user.id,
             "timestamp_created": comment.timestamp_created
         }
