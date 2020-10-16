@@ -58,6 +58,5 @@ The following routes are available
 | Create          | /{resource}/create      | POST          | Add new Project or Comment to the database, returns the newly created entry |
 | Edit By Id      | /{resource}/{:id}       | PATCH         | Update a particular Game or Review, returns the new entry               |
 | Delete By Id    | /{resource}/{:id}       | DELETE        | Delete a particular Game or Review                                      |
-
 | Login           | /users/login            | POST          | Logs in with a username and password, returns an authentication token   |
 | Create          | /users/create           | POST          | Creates a user and returns an authentication token                      |
