@@ -7,6 +7,8 @@
   - [Back-end](#back-end)
     - [Technologies Used](#technologies-used)
     - [Dependencies](#dependencies)
+    - [Authenticaton](#authentication)
+    - [Routes Available](#routes-available)
 
 ## Installation
 
@@ -53,10 +55,12 @@ The following routes are available
 
 | **Route name**  | **URL**                 | **HTTP Verb** | **Description**                                                         |
 | --------------- | ----------------------- | ------------- | ----------------------------------------------------------------------- |
-| Index           | /{resource}             | GET           | Display a list of all Project or Comment                                |
-| Show ID         | /{resource}/{:id}       | GET           | Display a specific Project or Comment based on their ID                 |
-| Create          | /{resource}/create      | POST          | Add new Project or Comment to the database, returns the newly created entry |
-| Edit By Id      | /{resource}/{:id}       | PATCH         | Update a particular Game or Review, returns the new entry               |
-| Delete By Id    | /{resource}/{:id}       | DELETE        | Delete a particular Game or Review                                      |
+| Index*          | /{resource}             | GET           | Display a list of all Project or Comment                                |
+| Show ID*        | /{resource}/{:id}       | GET           | Display a specific Project or Comment based on their ID                 |
+| Create*         | /{resource}/create      | POST          | Add new Project or Comment to the database, returns the newly created entry |
+| Edit By Id*     | /{resource}/{:id}       | PATCH         | Update a particular Game or Review, returns the new entry               |
+| Delete By Id*   | /{resource}/{:id}       | DELETE        | Delete a particular Game or Review                                      |
 | Login           | /users/login            | POST          | Logs in with a username and password, returns an authentication token   |
 | Create          | /users/create           | POST          | Creates a user and returns an authentication token                      |
+
+Routes marked with `*` need authentication to be accessed
