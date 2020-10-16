@@ -1,15 +1,15 @@
+from django.contrib.auth import get_user_model
 from rest_framework import generics
 from rest_framework import permissions
-from .models import Project, Website
-from .serializers import ProjectSerializer
-from developerverse.permissions import IsOwnerOrReadOnly
-from django.contrib.auth import get_user_model
-from guardian.shortcuts import assign_perm
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import Project, Website
+from .serializers import ProjectSerializer
+from .permissions import IsCreatorOrReadOnly
 import json
 
 User = get_user_model()
+
 class ProjectList(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
