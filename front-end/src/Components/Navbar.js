@@ -13,9 +13,9 @@ function Navbar() {
 
   function buttonHover(e) {
     if (e.target.className.includes("uHover")) {
-      e.target.className = "uButton uClear";
+      e.target.className = "uButton uClear uLightGrayText";
     } else {
-      e.target.className = "uButton uClear uHover";
+      e.target.className = "uButton uClear uLightGrayText uHover";
     }
   }
 
@@ -29,30 +29,26 @@ function Navbar() {
         </Link>
       </div>
       <div className="buttonsGrid">
-        <Link
-          to="/"
-          className="buttonFlex"
-          style={{ textDecoration: "none", color: "white" }}
-        >
+        <Link to="/" className="buttonFlex" style={{ textDecoration: "none" }}>
           <h2
-            className="uButton uClear"
+            className="uButton uClear uLightGrayText"
             onMouseOver={buttonHover}
             onMouseLeave={buttonHover}
           >
-            &lt;ABOUT&#47;&gt;
+            &lt;About&#47;&gt;
           </h2>
         </Link>
         <Link
           to="/explore"
           className="buttonFlex"
-          style={{ textDecoration: "none", color: "white" }}
+          style={{ textDecoration: "none" }}
         >
           <h2
-            className="uButton uClear"
+            className="uButton uClear uLightGrayText"
             onMouseOver={buttonHover}
             onMouseLeave={buttonHover}
           >
-            &lt;EXPLORE&#47;&gt;
+            &lt;Explore&#47;&gt;
           </h2>
         </Link>
         {user ? (
@@ -60,27 +56,23 @@ function Navbar() {
             <Link
               to={`/myprofile/${user.id}`}
               className="buttonFlex"
-              style={{ textDecoration: "none", color: "white" }}
+              style={{ textDecoration: "none" }}
             >
               <h2
-                className="uButton uClear"
+                className="uButton uClear uLightGrayText"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                &lt;ACCOUNT&#47;&gt;
+                &lt;Account&#47;&gt;
               </h2>
             </Link>
-            <div
-              onClick={logout}
-              className="buttonFlex"
-              style={{ color: "white" }}
-            >
+            <div onClick={logout} className="buttonFlex">
               <h2
-                className="uButton uClear"
+                className="uButton uClear uLightGrayText"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                &lt;LOG_OUT&#47;&gt;
+                &lt;Log_out&#47;&gt;
               </h2>
             </div>
           </>
@@ -92,11 +84,11 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <h2
-                className="uButton uClear"
+                className="uButton uClear uLightGrayText"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                &lt;LOG_IN&#47;&gt;
+                &lt;Log_in&#47;&gt;
               </h2>
             </Link>
             <Link
@@ -105,11 +97,11 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <h2
-                className="uButton uClear"
+                className="uButton uClear uLightGrayText"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
-                &lt;SIGN_UP&#47;&gt;
+                &lt;Sign_up&#47;&gt;
               </h2>
             </Link>
           </>

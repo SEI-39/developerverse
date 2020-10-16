@@ -107,10 +107,11 @@ p {
   border: 2px solid #b0b0b0;
   border-radius: 7px;
   padding: 5px;
-  font-size: 24px;
+  font-size: 28px;
   font-family: "t26-carbon", monospace;
   font-style: normal;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .uButtonSmall {
@@ -118,10 +119,11 @@ p {
   border-radius: 7px;
   padding: 5px;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .uHover {
-  border: 4px solid #f2ce18;
+  border: 2px solid #f2ce18;
   color: #f2ce18;
 }
 
