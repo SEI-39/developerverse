@@ -17,11 +17,11 @@ class Project(models.Model):
         return self.name
     def __dir__(self):
         return {
-            self.user.id,
-            self.name,
-            self.repo_url,
-            self.project_url,
-            self.desc
+            "name": self.name,
+            "user": self.user.id,
+            "repo_url": self.repo_url,
+            "project_url": self.project_url,
+            "desc": self.desc
         }
 
 class Website(models.Model):

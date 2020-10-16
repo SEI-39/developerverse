@@ -39,4 +39,5 @@ class Profile(APIView):
         projects = Project.objects.filter(user_id=user.id)
         response = []
         for project in projects:
-            print()
+            response.append(project.__dir__())
+        return Response(response)
