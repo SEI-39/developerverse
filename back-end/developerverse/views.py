@@ -3,7 +3,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Project, Website
+from .models import Project, Website, Comment
 from .serializers import ProjectSerializer
 from .permissions import IsCreatorOrReadOnly
 import json
@@ -41,7 +41,7 @@ class ProjectCreate(generics.GenericAPIView):
 
 class CommentList(generics.ListAPIView):
     queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
 
-    def get(self, request):
-        
+    def get(self, request, pk):
+        comments = Comment.objects.filter(id=pk)
+        return Response(comments)
