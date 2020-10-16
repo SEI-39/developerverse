@@ -70,8 +70,8 @@ function Login() {
         const user = &#123; email: Email.hashInput(), password:
         Password.hashInput() &#125; <br />
       </h3>
-      <div>
-        <button
+      <div style={{ paddingTop: "20px" }}>
+        <h2
           className="uButton uGray uLightGrayText loginButton loginFlex"
           onMouseOver={buttonHover}
           onMouseLeave={buttonHover}
@@ -80,7 +80,7 @@ function Login() {
           type="submit"
         >
           Login(user);
-        </button>
+        </h2>
       </div>
     </div>
   );

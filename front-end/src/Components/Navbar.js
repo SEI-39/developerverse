@@ -13,14 +13,14 @@ function Navbar() {
 
   function buttonHover(e) {
     if (e.target.className.includes("uHover")) {
-      e.target.className = "uButton uClear uLightGrayText";
+      e.target.className = "uButton uClear uLightGrayText navButton";
     } else {
-      e.target.className = "uButton uClear uLightGrayText uHover";
+      e.target.className = "uButton uClear uLightGrayText uHover navButton";
     }
   }
 
   return (
-    <div className="uPurple navbar">
+    <div className="uLineBox uPurple navbar">
       <div className="titleFlex">
         <Link to="/" style={{ textDecoration: "none", color: "white" }}>
           <h1 className="uYellowText siteTitle uClear">
@@ -31,7 +31,7 @@ function Navbar() {
       <div className="buttonsGrid">
         <Link to="/" className="buttonFlex" style={{ textDecoration: "none" }}>
           <h2
-            className="uButton uClear uLightGrayText"
+            className="uButton uClear uLightGrayText navButton"
             onMouseOver={buttonHover}
             onMouseLeave={buttonHover}
           >
@@ -44,7 +44,7 @@ function Navbar() {
           style={{ textDecoration: "none" }}
         >
           <h2
-            className="uButton uClear uLightGrayText"
+            className="uButton uClear uLightGrayText navButton"
             onMouseOver={buttonHover}
             onMouseLeave={buttonHover}
           >
@@ -59,7 +59,7 @@ function Navbar() {
               style={{ textDecoration: "none" }}
             >
               <h2
-                className="uButton uClear uLightGrayText"
+                className="uButton uClear uLightGrayText navButton"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
@@ -68,7 +68,7 @@ function Navbar() {
             </Link>
             <div onClick={logout} className="buttonFlex">
               <h2
-                className="uButton uClear uLightGrayText"
+                className="uButton uClear uLightGrayText navButton"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
@@ -84,7 +84,7 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <h2
-                className="uButton uClear uLightGrayText"
+                className="uButton uClear uLightGrayText navButton"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >
@@ -97,7 +97,7 @@ function Navbar() {
               style={{ textDecoration: "none", color: "white" }}
             >
               <h2
-                className="uButton uClear uLightGrayText"
+                className="uButton uClear uLightGrayText navButton"
                 onMouseOver={buttonHover}
                 onMouseLeave={buttonHover}
               >

@@ -4,23 +4,24 @@ import "../Styles/Sidebar.css";
 function Sidebar() {
   function buttonHover(e) {
     if (e.target.className.includes("uHover")) {
-      e.target.className = "uButton uClear uLightGrayText";
+      e.target.className = "uButtonSmall uClear uLightGrayText sideButton";
     } else {
-      e.target.className = "uButton uClear uLightGrayText uHover";
+      e.target.className =
+        "uButtonSmall uClear uLightGrayText uHoverSmall sideButton";
     }
   }
 
   return (
-    <div className="sidebar__container uGray">
+    <div className="uGray sidebar__container ">
       <div className="sideFlex">
-        <div className="sideTitle">
-          <h2 className="uLightGrayText">&lt;Sidebar&#47;&gt;</h2>
+        <div className="listItem">
+          <h4 className="uLightGrayText">&lt;Sidebar&#47;&gt;</h4>
         </div>
         <div className="sideListFlex">
           <div className="dashGrid">
-            <hr className="dashLine"></hr>
-            <h2 className="uLightGrayText">List</h2>
-            <hr className="dashLine"></hr>
+            <hr className="uGray uGrayText"></hr>
+            <h4 className="uLightGrayText">List</h4>
+            <hr className="uGray uGrayText"></hr>
           </div>
           <div className="sideList uLightGrayText">
             <div className="listItem">
@@ -41,13 +42,31 @@ function Sidebar() {
             </div>
           </div>
           <div className="dashGrid">
-            <hr className="dashLine"></hr>
-            <h2 className="uLightGrayText">Buttons</h2>
-            <hr className="dashLine"></hr>
+            <hr className="uGray uGrayText"></hr>
+            <h4 className="uLightGrayText">Buttons</h4>
+            <hr className="uGray uGrayText"></hr>
           </div>
           <div className="listItem buttonItem">
             <h2
-              className="uButton uClear uLightGrayText"
+              className="uButtonSmall uClear uLightGrayText sideButton"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
+              &lt;Log_out&#47;&gt;
+            </h2>
+          </div>
+          <div className="listItem buttonItem">
+            <h2
+              className="uButtonSmall uClear uLightGrayText sideButton"
+              onMouseOver={buttonHover}
+              onMouseLeave={buttonHover}
+            >
+              &lt;Log_out&#47;&gt;
+            </h2>
+          </div>
+          <div className="listItem buttonItem">
+            <h2
+              className="uButtonSmall uClear uLightGrayText sideButton"
               onMouseOver={buttonHover}
               onMouseLeave={buttonHover}
             >

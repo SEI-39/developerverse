@@ -12,7 +12,7 @@
 }
 
 .titleFlex {
-  width: 42%;
+  width: 31%;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -20,7 +20,7 @@
 }
 
 .buttonsGrid {
-  width: 58%;
+  width: 69%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -36,4 +36,8 @@
 .siteTitle {
   font-size: 40px;
   transform: translate(10px, 0px);
+}
+
+.navButton {
+  width: 11.69vw;
 }
