@@ -4,7 +4,7 @@ from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Project, Website, Comment
-from .serializers import ProjectSerializer
+from .serializers import ProjectSerializer, CommentSerializer
 from .permissions import IsCreatorOrReadOnly
 import json
 
@@ -45,3 +45,14 @@ class CommentList(generics.ListAPIView):
     def get(self, request, pk):
         comments = Comment.objects.filter(id=pk)
         return Response(comments)
+
+class CommentCreate(generics.GenericAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    def post(self, request):
+        body = json.loads(request.body)
+        serializer = ProjectSerializer(data={**body})
+        if serializer.is_valid(raise_exception=True):
+            res = serializer.create(serializer.validated_data)
+            return Response(res)
