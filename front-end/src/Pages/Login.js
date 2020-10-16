@@ -44,10 +44,20 @@ function Login() {
 
   return (
     <div className="form__container">
+      <h2 className="uLightGrayText" style={{ paddingTop: "20px" }}>
+        Log in to your account
+      </h2>
+      <hr
+        style={{
+          marginTop: "10px",
+          marginBottom: "10px",
+          borderColor: "#f2ce18",
+        }}
+      ></hr>
       <h3 className="uLightGrayText" style={{ paddingBottom: "20px" }}>
         if (isDeveloper === true &amp;&amp; isLoggedIn === false) <br />
       </h3>
-      <div className="uBox leftFlex">
+      <div className="uLineBox leftFlex">
         <div className="loginFlex">
           <h3 className="uYellowText">let Email = input("</h3>
           <input
