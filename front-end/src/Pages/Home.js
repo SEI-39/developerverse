@@ -73,7 +73,7 @@ function Home() {
             </div>
             <div className="spacer">
               <div className="buttonBox">
-                <Link to="/signup" className="button">
+                <Link to="/explore" className="button">
                   <h2
                     className="uButtonSmall uGray uLightGrayText"
                     onMouseOver={buttonHover}
@@ -82,11 +82,7 @@ function Home() {
                     &lt;Explore&#47;&gt;
                   </h2>
                 </Link>
-                <Link
-                  to="/signup"
-                  className="button"
-                  style={{ paddingTop: "10px" }}
-                >
+                <Link to="/" className="button" style={{ paddingTop: "10px" }}>
                   <h2
                     className="uButtonSmall uGray uLightGrayText"
                     onMouseOver={buttonHover}
@@ -113,7 +109,7 @@ function Home() {
             </div>
             <div className="spacer">
               <div className="buttonBox">
-                <Link to="/signup" className="button">
+                <Link to="/" className="button">
                   <h2
                     className="uButtonSmall uGray uLightGrayText"
                     onMouseOver={buttonHover}
