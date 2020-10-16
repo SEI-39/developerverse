@@ -51,8 +51,22 @@ function MyProfile() {
     setForm(false);
   };
   return (
-    <div style={{ backgroundColor: "white" }}>
-      <h1>My Account</h1>
+    <div>
+      <div className="uBox uGray">
+        <h2 className="uLightGrayText" style={{ paddingTop: "20px" }}>
+          Your DeveloperVerse account{" "}
+        </h2>
+        <hr
+          style={{
+            marginTop: "10px",
+            marginBottom: "10px",
+            borderColor: "#f2ce18",
+          }}
+        ></hr>
+        <h3 className="uLightGrayText" style={{ paddingBottom: "20px" }}>
+          if (isDeveloper === true &amp;&amp; isLoggedIn === true) &#123; <br />
+        </h3>{" "}
+      </div>
       <pre>USER: {JSON.stringify(user)}</pre>
       {projects && (
         <div className="projects__container">

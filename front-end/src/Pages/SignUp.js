@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../UserContext";
 import { useHistory } from "react-router-dom";
 import axios from "../axios";
+import "./../Styles/Signup.css";
 
 function SignUpForm() {
   const [emailInput, setEmailInput] = useState("");
@@ -31,44 +32,108 @@ function SignUpForm() {
     }
   };
 
+  function buttonHover(e) {
+    if (e.target.className.includes("uHover")) {
+      e.target.className = "uButton uGray uWhiteText loginButton loginFlex";
+    } else {
+      e.target.className = "uButton uGray uHover loginButton loginFlex";
+    }
+  }
+
+  function buttonClick(e) {
+    e.target.className = "uButton uGray uClick loginButton loginFlex";
+  }
+
   return (
     <div className="form_container">
-      <h1>Sign Up</h1>
-      <div>
-        <label> Full Name</label>
-        <input type="text" id="text" placeholder="Enter Name" />
-        <label> Email address</label>
-        <input
-          type="email"
-          id="email"
-          aria-describedby="emailHelp"
-          placeholder="Enter email"
-          onChange={(e) => setEmailInput(e.target.value)}
-        />
-        We'll never share your email with anyone else.
+      <h2 className="uLightGrayText" style={{ paddingTop: "20px" }}>
+        Sign up for a new account
+      </h2>
+      <hr
+        style={{
+          marginTop: "10px",
+          marginBottom: "10px",
+          borderColor: "#f2ce18",
+        }}
+      ></hr>
+      <h3 className="uLightGrayText">
+        if (isDeveloper === true &amp;&amp; isMember === false) &#123; <br />
+      </h3>
+      <div className="uLineBox" style={{ marginTop: "20px" }}>
+        <div className="fieldFlex" style={{ paddingTop: "20px" }}>
+          <div className="signUpColumn">
+            <div className="signUpFlex">
+              <label>
+                <h3 className="uYellowText">let Email = input("</h3>
+              </label>
+              <input
+                type="email"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Your Email"
+                className="uClear uLightGrayText signUpInput"
+                onChange={(e) => setEmailInput(e.target.value)}
+              />
+              <h3 className="uYellowText">");</h3>
+            </div>
+          </div>
+        </div>
+
+        <h3 className="uLightGrayText" style={{ padding: "10px" }}>
+          console.log("DeveloperVerse will{" "}
+          <span className="uYellowText">never</span> share your email with
+          anyone else.");
+        </h3>
+
+        <div style={{ marginBottom: "20px" }}>
+          <div class="signUpColumn">
+            <div class="signUpFlex">
+              <label htmlFor="exampleInputPassword1">
+                {" "}
+                <h3 className="uYellowText">let Password = input("</h3>
+              </label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className="uClear uLightGrayText signUpInput"
+                onChange={(e) => setPasswordInput(e.target.value)}
+              />
+              <h3 className="uYellowText">", type="password");</h3>
+            </div>
+          </div>
+          <div className="signUpColumn">
+            <div className="signUpFlex">
+              <label htmlFor="exampleInputPassword1">
+                <h3 className="uYellowText">PasswordConfirm = input("</h3>
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                className="uClear uLightGrayText signUpInput"
+                onChange={(e) => setConfirmPasswordInput(e.target.value)}
+              />
+              <h3 className="uYellowText">type="password");</h3>
+            </div>
+          </div>
+        </div>
       </div>
+      <h3 className="uLightGrayText" style={{ paddingTop: "20px" }}>
+        const user = &#123; email: Email.hashInput(), password:
+        Password.hashInput() &#125; <br />
+      </h3>
       <div>
-        <label htmlFor="exampleInputPassword1">Password</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          onChange={(e) => setPasswordInput(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="exampleInputPassword1">Confirm Password</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          placeholder="Confirm Password"
-          onChange={(e) => setConfirmPasswordInput(e.target.value)}
-        />
-      </div>
-      <div>
-        <button onClick={createUser} type="submit">
-          Sign Up
-        </button>
+        <h2
+          onMouseOver={buttonHover}
+          onMouseLeave={buttonHover}
+          onMouseDown={buttonClick}
+          onClick={createUser}
+          type="submit"
+          className="uButton uGray uLightGrayText loginButton loginFlex"
+        >
+          Sign_Up(user);
+        </h2>
       </div>
     </div>
   );
