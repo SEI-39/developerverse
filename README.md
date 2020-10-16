@@ -22,6 +22,17 @@ For Heroku deployment see the Wiki @ [Heroku](https://github.com/SEI-39/develope
 
 ## Front-end
 
+### Technologies Used
+
+- [JavaScript](https://www.javascript.com/)
+- [NodeJS](https://nodejs.org/en/)
+- [Netlify](https://www.netlify.com/) - A free website hosting service
+
+### Dependencies
+
+- [ReactJS](https://reactjs.org/) - A client-side JavaScript library for building interfaces
+- [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+
 ## Back-end
 
 ### Technologies Used
