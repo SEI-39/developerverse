@@ -34,8 +34,10 @@ For Heroku deployment see the Wiki @ [Heroku](https://github.com/SEI-39/develope
 
 - [ReactJS](https://reactjs.org/) - A client-side JavaScript library for building interfaces
 - [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js
+- [React-Router](https://www.npmjs.com/package/react-router) - A package providing dynamic routing functionality for web apps
+- [React-Router-Dom](https://www.npmjs.com/package/react-router-dom) - A package containing the DOM bindings for react-router
 
-## Back-end
+## Back-end 
 
 ### Technologies Used
 
