@@ -17,7 +17,7 @@ function Explore() {
 
   return (
     <div>
-      <h1 style={{ color: "white" }}>50 most recent projects</h1>
+      <h1 style={{ color: "white" }}>Recent projects</h1>
       {projects && (
         <div className="projects__container">
           {projects.map((project) => (

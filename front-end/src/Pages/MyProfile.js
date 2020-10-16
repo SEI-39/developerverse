@@ -51,9 +51,9 @@ function MyProfile() {
     setForm(false);
   };
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div className="uLightGrayText">
       <h1>My Account</h1>
-      <pre>USER: {JSON.stringify(user)}</pre>
+      <h2>Projects:</h2>
       {projects && (
         <div className="projects__container">
           {projects.map((project) => (

@@ -21,7 +21,7 @@ export default function App() {
     <UserContext.Provider value={providerValue}>
       <div className="uBlack">
         <Navbar />
-        <Sidebar />
+        <Sidebar user={user} />
         <div className="uBlack app__container">
           <div className="body__container">
             <Switch>
