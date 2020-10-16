@@ -18,6 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         user.save()
         assign_perm('developerverse.add_project', user)
+        assign_perm('developerverse.add_comment', user)
         token = Token.objects.create(user=user)
         return {
             'token': token.key,

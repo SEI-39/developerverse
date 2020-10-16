@@ -1,15 +1,15 @@
+from django.contrib.auth import get_user_model
 from rest_framework import generics
 from rest_framework import permissions
-from .models import Project, Website
-from .serializers import ProjectSerializer
-from developerverse.permissions import IsOwnerOrReadOnly
-from django.contrib.auth import get_user_model
-from guardian.shortcuts import assign_perm
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import Project, Website, Comment
+from .serializers import ProjectSerializer, CommentSerializer
+from .permissions import IsCreatorOrReadOnly
 import json
 
 User = get_user_model()
+
 class ProjectList(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
@@ -38,3 +38,27 @@ class ProjectCreate(generics.GenericAPIView):
         if serializer.is_valid(raise_exception=True):
             res = serializer.create(serializer.validated_data)
             return Response(res)
+
+class CommentList(generics.ListAPIView):
+    queryset = Comment.objects.all()
+
+    def get(self, request, pk):
+        comments = Comment.objects.filter(id=pk)
+        return Response(comments)
+
+class CommentCreate(generics.GenericAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    def post(self, request, pk):
+        body = json.loads(request.body)
+        serializer = CommentSerializer(data={**body})
+        if serializer.is_valid(raise_exception=True):
+            res = serializer.create(serializer.validated_data)
+            return Response(res)
+
+class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    permission_classes = [IsCreatorOrReadOnly]
