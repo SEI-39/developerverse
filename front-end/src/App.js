@@ -30,7 +30,6 @@ export default function App() {
               <Route exact path="/profile/:id" component={Profile} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/explore" component={Explore} />
-
               {user ? (
                 <Route exact path="/myprofile/:id" component={MyProfile} />
               ) : (
