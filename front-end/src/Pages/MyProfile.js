@@ -13,20 +13,20 @@ function MyProfile() {
 
   const { user } = useContext(UserContext);
 
-  const headers = {
+  const header = {
     Authorization: `token ${user.token}`,
   };
 
   useEffect(() => {
     async function fetchProjects() {
       const res = await axios.get(`/users/profile`, {
-        headers: headers,
+        headers: header,
       });
       setProjects(res.data);
       return res;
     }
     fetchProjects();
-  }, [headers]);
+  }, []);
 
   const createProject = async () => {
     let project = {
@@ -38,7 +38,7 @@ function MyProfile() {
     };
     await axios
       .post(`/projects/create`, project, {
-        headers: headers,
+        headers: header,
       })
       .then((res) => console.log(res))
       .catch((error) => {
