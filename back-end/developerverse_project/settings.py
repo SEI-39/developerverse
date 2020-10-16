@@ -30,10 +30,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+CURRENT_ENV = os.getenv("CURRENT_ENV")
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
-
+if CURRENT_ENV == 'test':
+    DEBUG = True
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
+elif CURRENT_ENV == 'development':
+    DEBUG = False
+    ALLOWED_HOSTS = ['.herokuapp.com']
 
 # Application definition
 
@@ -156,11 +160,17 @@ STATIC_URL = '/static/'
 
 # Whitelisted CORS Domains
 # https://github.com/adamchainz/django-cors-headers#configuration
-CORS_ALLOWED_ORIGINS = [
-    "https://developerverse.netlify.app",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    "http://localhost:3000"]
+
+if CURRENT_ENV == 'test':
+    CORS_ALLOWED_ORIGINS = [
+        "https://developerverse.netlify.app",
+        "http://localhost:8080",
+        "http://127.0.0.1:9000",
+        "http://localhost:3000"]
+elif CURRENT_ENV == 'development':
+    CORS_ALLOWED_ORIGINS = [
+        "https://developerverse.netlify.app"
+    ]
 
 # Disable the standard view and only return the JSON object that is
 # requested, See the following for more details:
