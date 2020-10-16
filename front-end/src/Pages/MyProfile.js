@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
-import ProjectList from "../Components/ProjectList";
+import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../UserContext";
 import axios from "../axios";
+import ProjectDisplay from "../Components/ProjectDisplay";
 
 function MyProfile() {
   const [form, setForm] = useState(false);
@@ -9,13 +9,26 @@ function MyProfile() {
   const [repoURL, setRepoURL] = useState("");
   const [projectURL, setProjectURL] = useState("");
   const [desc, setDesc] = useState("");
+  const [projects, setProjects] = useState(null);
 
   const { user } = useContext(UserContext);
 
+  const headers = {
+    Authorization: `token ${user.token}`,
+  };
+
+  useEffect(() => {
+    async function fetchProjects() {
+      const res = await axios.get(`/projects/`, {
+        headers: headers,
+      });
+      setProjects(res.data);
+      return res;
+    }
+    fetchProjects();
+  }, []);
+
   const createProject = async () => {
-    let headers = {
-      Authorization: `token ${user.token}`,
-    };
     let project = {
       user: user.user_id,
       name: name,
@@ -41,7 +54,13 @@ function MyProfile() {
     <div style={{ backgroundColor: "white" }}>
       <h1>My Account</h1>
       <pre>USER: {JSON.stringify(user)}</pre>
-      <ProjectList />
+      {projects && (
+        <div className="projects__container">
+          {projects.map((project) => (
+            <ProjectDisplay project={project} />
+          ))}
+        </div>
+      )}
       <button onClick={() => setForm(true)}>create a new project</button>
       {form && (
         <div>
