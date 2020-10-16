@@ -26,7 +26,7 @@ function MyProfile() {
       return res;
     }
     fetchProjects();
-  }, []);
+  }, [headers]);
 
   const createProject = async () => {
     let project = {
