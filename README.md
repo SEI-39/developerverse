@@ -7,7 +7,7 @@
   - [Back-end](#back-end)
     - [Technologies Used](#technologies-used)
     - [Dependencies](#dependencies)
-    - [Authenticaton](#authentication)
+    - [Authentication](#authentication)
     - [Routes Available](#routes-available)
 
 ## Installation
