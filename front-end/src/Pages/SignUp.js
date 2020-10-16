@@ -86,8 +86,8 @@ function SignUpForm() {
         </h3>
 
         <div style={{ marginBottom: "20px" }}>
-          <div class="signUpColumn">
-            <div class="signUpFlex">
+          <div className="signUpColumn">
+            <div className="signUpFlex">
               <label htmlFor="exampleInputPassword1">
                 {" "}
                 <h3 className="uYellowText">let Password = input("</h3>
