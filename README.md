@@ -4,9 +4,11 @@
   - [Installation](#installation)
   - [Deployment](#deployment)
   - [Font-end](#front-end)
-  - [Back-end](#back-end)
     - [Technologies Used](#technologies-used)
     - [Dependencies](#dependencies)
+  - [Back-end](#back-end)
+    - [Technologies Used](#technologies-used-1)
+    - [Dependencies](#dependencies-1)
     - [Authentication](#authentication)
     - [Routes Available](#routes-available)
 
