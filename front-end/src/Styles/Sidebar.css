@@ -1,7 +1,42 @@
+.dashGrid {
+  width: 13vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dashLine {
+  color: #b0b0b0;
+  background-color: #b0b0b0;
+  height: 1.5px;
+}
+
 .sidebar__container {
   position: fixed;
   right: 0;
-  top: 10vh;
   width: 15%;
-  height: 100vh;
+  height: 100%;
+}
+
+.sideFlex {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sideList {
+  padding-top: 20px;
+}
+
+.sideTitle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
 }
