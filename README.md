@@ -43,4 +43,4 @@ Add that token to your request headers in this format:
 
 | **Key** | **Value** |
 | ------- | --------- |
-| Authorization | 'token *your token here* |
+| Authorization | token *your token here* |
