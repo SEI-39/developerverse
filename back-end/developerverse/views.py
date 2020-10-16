@@ -56,3 +56,9 @@ class CommentCreate(generics.GenericAPIView):
         if serializer.is_valid(raise_exception=True):
             res = serializer.create(serializer.validated_data)
             return Response(res)
+
+class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    permission_classes = [IsCreatorOrReadOnly]

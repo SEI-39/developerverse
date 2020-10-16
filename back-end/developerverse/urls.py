@@ -8,4 +8,5 @@ urlpatterns = [
 
     path('projects/<int:pk>/comments', views.CommentList.as_view(), name='comment_list'),
     path('projects/<int:pk>/comments/create', views.CommentCreate.as_view(), name='comment_create'),
+    path('comments/<int:pk>', views.CommentDetail.as_view(), name='comment_detail')
 ]
