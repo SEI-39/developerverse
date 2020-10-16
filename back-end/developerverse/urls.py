@@ -7,5 +7,5 @@ urlpatterns = [
     path('projects/<int:pk>', views.ProjectDetail.as_view(), name='project_detail'),
 
     path('projects/<int:pk>/comments', views.CommentList.as_view(), name='comment_list'),
-    #path('projects/create', views.CommentCreate.as_view(), name='comment_create'),
+    path('projects/<int:pk>/comments/create', views.CommentCreate.as_view(), name='comment_create'),
 ]

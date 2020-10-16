@@ -32,7 +32,7 @@ class CommentSerializer(serializers.ModelSerializer):
         comment.save()
         return {
             "body": comment.body,
-            "project": comment.project,
-            "author": comment.author,
+            "project": comment.project.id,
+            "author": comment.author.id,
             "timestamp_created": comment.timestamp_created
         }

@@ -50,9 +50,9 @@ class CommentCreate(generics.GenericAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
-    def post(self, request):
+    def post(self, request, pk):
         body = json.loads(request.body)
-        serializer = ProjectSerializer(data={**body})
+        serializer = CommentSerializer(data={**body})
         if serializer.is_valid(raise_exception=True):
             res = serializer.create(serializer.validated_data)
             return Response(res)
