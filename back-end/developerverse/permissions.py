@@ -11,4 +11,7 @@ class IsCreatorOrReadOnly(permissions.BasePermission):
             return True
 
         # Write permissions are only allowed to the owner of the project
-        return obj.user == request.user 
+        try:
+            return obj.user == request.user
+        except:
+            return false
