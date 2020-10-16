@@ -38,3 +38,10 @@ class ProjectCreate(generics.GenericAPIView):
         if serializer.is_valid(raise_exception=True):
             res = serializer.create(serializer.validated_data)
             return Response(res)
+
+class CommentList(generics.ListAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+    def get(self, request):
+        
