@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../UserContext";
 import axios from "../axios";
 import ProjectDisplay from "../Components/ProjectDisplay";
+import "./../Styles/MyProfile.css";
 
 function MyProfile() {
   const [form, setForm] = useState(false);
@@ -51,23 +52,29 @@ function MyProfile() {
     setForm(false);
   };
   return (
-    <div>
-      <div className="uBox uGray">
-        <h2 className="uLightGrayText" style={{ paddingTop: "20px" }}>
-          Your DeveloperVerse account{" "}
-        </h2>
-        <hr
-          style={{
-            marginTop: "10px",
-            marginBottom: "10px",
-            borderColor: "#f2ce18",
-          }}
-        ></hr>
-        <h3 className="uLightGrayText" style={{ paddingBottom: "20px" }}>
-          if (isDeveloper === true &amp;&amp; isLoggedIn === true) &#123; <br />
-        </h3>{" "}
+    <div className="uLightGrayText">
+      <div>
+        <div
+          className="uLineBox uGray profileHeader"
+          style={{ paddingBottom: "20px" }}
+        >
+          <h2 className="uLightGrayText" style={{}}>
+            Your DeveloperVerse account{" "}
+          </h2>
+          <hr
+            style={{
+              marginTop: "10px",
+              marginBottom: "10px",
+              borderColor: "#f2ce18",
+            }}
+          ></hr>
+          <h3 className="uLightGrayText" style={{}}>
+            if (isDeveloper === true &amp;&amp; isLoggedIn === true) &#123;{" "}
+            <br />
+          </h3>{" "}
+        </div>
       </div>
-      <pre>USER: {JSON.stringify(user)}</pre>
+      <h2>Projects:</h2>
       {projects && (
         <div className="projects__container">
           {projects.map((project) => (
