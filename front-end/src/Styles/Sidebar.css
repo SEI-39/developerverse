@@ -1,18 +1,12 @@
 .dashGrid {
-  width: 15vw;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   justify-content: center;
   text-align: center;
   grid-gap: 5px;
   padding-top: 20px;
-}
-
-.dashLine {
-  color: #b0b0b0;
-  background-color: #b0b0b0;
-  height: 1.5px;
 }
 
 .li {
@@ -28,8 +22,8 @@
 }
 
 .buttonItem {
-  height: 50px;
-  padding-right: 10px;
+  height: 30px;
+  padding-right: 5%;
 }
 
 .sidebar__container {
@@ -40,7 +34,7 @@
 }
 
 .sideFlex {
-  width: 16vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -54,6 +48,7 @@
 }
 
 .sideListFlex {
+  width: 100%;
 }
 
 .sideTitle {
@@ -64,4 +59,11 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 20px;
+}
+
+.sideButton {
+  width: 69%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <UserContext.Provider value={providerValue}>
-      <div>
+      <div class="uBlack">
         <Navbar />
         <Sidebar />
         <div className="uBlack app__container">

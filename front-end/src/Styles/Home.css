@@ -1,0 +1,125 @@
+.body-text {
+  color: #b0b0b0;
+}
+
+.button {
+  width: 100%;
+}
+
+.buttonBox {
+  width: 80%;
+  height: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  background-color: #201a26;
+}
+
+.homeGrid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 69px;
+  margin-top: 69px;
+  margin-bottom: 69px;
+}
+
+.main-container {
+  background-color: black;
+  padding: 30px;
+  height: 100%;
+}
+
+.nav-bar {
+  background-color: #201a26;
+}
+
+.imageBox {
+  height: 150px;
+  width: 25%;
+}
+
+.pic1 {
+  background-image: url("../Assets/developerVerse.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pic2 {
+  background-image: url("../Assets/coder.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pic3 {
+  background-image: url("../Assets/coder2.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rowFlexLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 150px;
+}
+
+.rowFlexRight {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 150px;
+}
+
+.spacer {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.textchild {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 150px;
+  align-items: center;
+  padding: 0px;
+}
+
+.textFlexLeft {
+  display: flex;
+  justify-content: left;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 80%;
+  height: 150px;
+}
+
+.textFlexRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  width: 80%;
+  height: 150px;
+}
+.textbox {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.homeWelcome {
+  margin-bottom: 25px;
+  padding: 50px;
+}
