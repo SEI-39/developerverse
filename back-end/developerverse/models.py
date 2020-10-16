@@ -15,6 +15,14 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+    def __dir__(self):
+        return {
+            "name": self.name,
+            "user": self.user.id,
+            "repo_url": self.repo_url,
+            "project_url": self.project_url,
+            "desc": self.desc
+        }
 
 class Website(models.Model):
 

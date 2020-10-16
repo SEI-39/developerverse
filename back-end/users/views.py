@@ -1,9 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import get_user_model, authenticate
 from .serializers import UserSerializer
+from developerverse.models import Project
 import json, os
 
 User = get_user_model()
@@ -29,3 +30,14 @@ class Login(APIView):
         serializer = UserSerializer(data={**body})
         res = serializer.validate_login(serializer.initial_data)
         return Response(res)
+
+class Profile(APIView):
+    permissions_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        projects = Project.objects.filter(user_id=user.id)
+        response = []
+        for project in projects:
+            response.append(project.__dir__())
+        return Response(response)
