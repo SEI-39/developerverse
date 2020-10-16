@@ -44,3 +44,9 @@ Add that token to your request headers in this format:
 | **Key** | **Value** |
 | ------- | --------- |
 | Authorization | token *your token here* |
+
+And you will have full access to the API!
+
+### Routes Available
+
+These are the routes currently accessible
