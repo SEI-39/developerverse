@@ -1,12 +1,19 @@
 import React from "react";
+import "../Styles/ProjectDisplay.css";
 
 function ProjectDisplay({ project }) {
   return (
-    <div className="uYellow" style={{ margin: "10px" }}>
-      <h1>{project.name}</h1>
-      <h2>{project.repo_url}</h2>
-      <h2>{project.project_url}</h2>
-      <h2>{project.desc}</h2>
+    <div className="uLineBox uGray project__container">
+      <div className="project__top">
+        <h2 className="uYellowText">{project.name}</h2>
+        <h3>Description: {project.desc}</h3>
+      </div>
+      <div className="project__bottom">
+        <div>
+          <p>Repo URL: {project.repo_url}</p>
+          <p>Project URL: {project.project_url}</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ user }) {
   function buttonHover(e) {
     if (e.target.className.includes("uHover")) {
       e.target.className = "uButtonSmall uClear uLightGrayText sideButton";
@@ -15,7 +15,11 @@ function Sidebar() {
     <div className="uGray sidebar__container ">
       <div className="sideFlex">
         <div className="listItem">
-          <h4 className="uLightGrayText">&lt;Sidebar&#47;&gt;</h4>
+          {user ? (
+            <h4 className="uLightGrayText">&lt;{user.email}&#47;&gt;</h4>
+          ) : (
+            <h4 className="uLightGrayText">&lt;Sidebar&#47;&gt;</h4>
+          )}
         </div>
         <div className="sideListFlex">
           <div className="dashGrid">
