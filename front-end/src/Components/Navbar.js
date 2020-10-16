@@ -57,7 +57,7 @@ function Navbar() {
         {user ? (
           <>
             <Link
-              to={`/myprofile/${user.id}`}
+              to={`/myprofile/${user.user_id}`}
               className="buttonFlex"
               style={{ textDecoration: "none" }}
             >
