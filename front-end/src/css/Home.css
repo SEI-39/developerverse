@@ -28,62 +28,120 @@ h1 {
     font-weight: 700;
     font-size: 42px;
   }
-
+.welcome-header {
+    margin-bottom: 25px;
+}
 .main-content-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 100%;
 
 }
 .picture1 {
     background-image: url('developerVerse.jpg');
     height: 150px;
-    width: 800px;
+    width: 20%;
     background-size: cover;
-    margin: 15px;
+    margin-right: 15px;
+    
+    
 }
 .picture2 {
     background-image: url('coder.jpg');
     height: 150px;
-    width: 800px;
-    background-size: 150%;
+    width: 20%;
+    background-size: cover;
     background-repeat: no-repeat;
-    margin: 15px;
+    margin-left: 15px;
+    
 }
 .picture3 {
     background-image: url('coder2.jpg');
     height: 150px;
-    width: 800px;
-    background-size: 120%;
+    width: 250px;
+    background-size: cover;
     background-repeat: no-repeat;
-    margin: 15px;
+    margin-right: 15px;
+    
 }
 .contentBox1-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5px;
     height: 150px;
+    margin: 45px;
     
 }
 .contentBox2-container {
     display: flex;
     flex-direction: row-reverse;
-    margin: 5px;
     align-items: center;
-    
+    margin: 45px;
 }
 .contentBox3-container {
     display: flex;
     flex-direction: row;
-    margin: 5px;
     align-items: center;
-    
+    margin: 45px;
 }
-.uGray.uBox {
-    height: 150px;
+.spacer {
     display: flex;
     flex-direction: row;
+    width:20%;
+    margin-right: 15px;
+    height: 100%;
     align-items: center;
+    justify-content: center;
+    /* display: none; */
 
+
+}
+.spacer2 {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    margin-left: 15px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+.textchild {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 130px;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.textbox-right {
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse; 
+    align-items: center;
+    width: 80%;
+    height: 150px;
+}
+
+.textbox-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    
+}
+.textbox {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+button{
+    width: 100%;
+    height: 25%;
+    
 }
