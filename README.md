@@ -3,6 +3,9 @@
 - [Developerverse](#developerverse)
   - [Installation](#installation)
   - [Deployment](#deployment)
+  - [Technologies Used](#technologies-used)
+    - [Font-end](#front-end)
+    - [Back-end](#back-end)
 
 ## Installation
 
