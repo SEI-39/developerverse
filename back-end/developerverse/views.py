@@ -27,6 +27,7 @@ class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class ProjectCreate(generics.GenericAPIView):
     serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         qs = Project.objects.filter(user_id=self.request.user)
@@ -49,6 +50,7 @@ class CommentList(generics.ListAPIView):
 class CommentCreate(generics.GenericAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request, pk):
         body = json.loads(request.body)
